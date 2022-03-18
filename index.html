@@ -37,11 +37,11 @@ function readSingleFile(evt) {
   }
 }
 
-function save() {
+async function save() {
     alert(new_content);
     let file_name = 'new.html'
     let file = new Blob([new_content], {type: 'text/html'});
-    saveFile(file, file_name);
+    await saveFile(file, file_name);
 }
 document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
 </script>
