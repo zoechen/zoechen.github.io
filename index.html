@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoe chen Workspace</title>
+  <title>Zoe Workspace</title>
   <script src="https://unpkg.com/@seregpie/save-file"></script>
 </head>
 <body>
-  <h3>try upload a file</h3>
+  <h3>上傳html</h3>
   <form action="">
     <input type="file" name="pic" accept="html" id="htmlFile">
     <button type="button" onclick="save">Save</button>
@@ -21,15 +21,14 @@ var new_content ='';
 
 function readSingleFile(evt) {
   //Retrieve the first (and only!) File from the FileList object
-  var f = evt.target.files[0]; 
+  let f = evt.target.files[0]; 
   if (f) {
-    var r = new FileReader();
+    let r = new FileReader();
     r.onload = function(e) { 
-      var contents = e.target.result;
+      let contents = e.target.result;
       alert(contents);
       new_content = contents.replace(/<title>(.*?)<\/title>/g,"<title></title>")
       content.innerText = new_content
-      
     }
     r.readAsText(f);
   } else { 
@@ -38,11 +37,10 @@ function readSingleFile(evt) {
 }
 
 function save() {
-      alert(new_content);
-      var file_name = 'new.html'
-      var file = new Blob([new_content], {type: 'text/html'});
-      await saveFile(file, file_name);
-     
+    alert(new_content);
+    let file_name = 'new.html'
+    let file = new Blob([new_content], {type: 'text/html'});
+    saveFile(file, file_name);
 }
 document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
 </script>
