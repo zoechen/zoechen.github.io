@@ -13,7 +13,6 @@
   <form action="">
     <input type="file" name="pic" accept="html" id="htmlFile">
     <button type="button" onclick="save">Save</button>
-    <a></a>
   </form>
   
   <p id="htos"></p>
@@ -40,14 +39,14 @@ function readSingleFile(evt) {
 }
 
 function save() {
-  alert(new_content);
+      alert(new_content);
       var file_name = 'new.html'
       var file = new Blob([new_content], {type: 'text/html'});
         if (window.navigator.msSaveOrOpenBlob) {
             window.navigator.msSaveOrOpenBlob(file, file_name);
          } else { 
             var a = document.createElement("a"),
-                    url = URL.createObjectURL(file);
+                    url = window.URL.createObjectURL(file);
             a.href = url;
             a.download = file_name;
             document.body.appendChild(a);
