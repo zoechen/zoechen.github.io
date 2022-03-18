@@ -12,8 +12,8 @@
 
   <form action="">
     <input type="file" name="pic" accept="html" id="htmlFile">
-    
-    <button id="save">Save</button>
+    <button type="button" onclick="save">Save</button>
+    <a></a>
   </form>
   
   <p id="htos"></p>
@@ -47,11 +47,9 @@ function save() {
   a.download = "new.html";
   a.hidden = true;
   document.body.appendChild(a);
-  
   a.innerHTML = "download fixed";
   a.click();
 }
-document.getElementById('save').addEventListener('click',save);
 document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
 </script>
 </body>
