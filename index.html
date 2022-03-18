@@ -8,9 +8,10 @@
   <script src="https://unpkg.com/@seregpie/save-file"></script>
 </head>
 <body>
-  <h3>上傳html</h3>
+  <h3>async await</h3>
   <form action="">
-    <input type="file" name="pic" accept="html" id="htmlFile">
+    <input type="file" name="old" accept="html" id="htmlFile">
+    <input type="text" name="new" />
     <button type="button" onclick="save">Save</button>
   </form>
   
@@ -19,6 +20,8 @@
 import saveFile from '@seregpie/save-file'
 const content = document.querySelector('#htos');
 var new_content ='';
+var form = document.forms[0];
+var selectElement = form.querySelector('input[name="new"]');
 
 function readSingleFile(evt) {
   //Retrieve the first (and only!) File from the FileList object
@@ -39,7 +42,7 @@ function readSingleFile(evt) {
 
 async function save() {
     alert(new_content);
-    let file_name = 'new.html'
+    let file_name = selectElement.value + '.html'
     let file = new Blob([new_content], {type: 'text/html'});
     await saveFile(file, file_name);
 }
