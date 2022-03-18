@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+
+  <form action="">
+    <input type="file" name="pic" accept="html" id="htmlFile">
+    
+    <button id="save">Save</button>
+  </form>
+  
+  <p id="htos"></p>
+<script>
+const content = document.querySelector('#htos');
+var new_content ='';
+
+function readSingleFile(evt) {
+  //Retrieve the first (and only!) File from the FileList object
+  var f = evt.target.files[0]; 
+  if (f) {
+    var r = new FileReader();
+    r.onload = function(e) { 
+      var contents = e.target.result;
+      alert(contents);
+      new_content = contents.replace(/<title>(.*?)<\/title>/g,"<title></title>")
+      content.innerText = new_content
+      
+    }
+    r.readAsText(f);
+  } else { 
+    alert("Failed to load file");
+  }
+}
+
+function save() {
+  var bl = new Blob(new_content, {type: "text/html"});
+  alert(new_content);
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = "new.html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  
+  a.innerHTML = "download fixed";
+  a.click();
+}
+document.getElementById('save').addEventListener('click',save);
+document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
+</script>
+</body>
+</html>
