@@ -8,11 +8,12 @@
   <script src="https://unpkg.com/@seregpie/save-file"></script>
 </head>
 <body>
-  <h3>async await</h3>
+  <h3>上傳html改title</h3>
   <form action="">
     <input type="file" name="old" accept="html" id="htmlFile">
     <input type="text" name="new" />
     <button type="button" onclick="save">Save</button>
+    <button type="button" onclick="download">Download</button>
   </form>
   
   <p id="htos"></p>
@@ -23,6 +24,7 @@ const content = document.querySelector('#htos');
 var new_content ='';
 const selectElement = document.querySelector('input[name="new"]');
 
+
 function readSingleFile(evt) {
   //Retrieve the first (and only!) File from the FileList object
   let f = evt.target.files[0]; 
@@ -31,7 +33,7 @@ function readSingleFile(evt) {
     r.onload = function(e) { 
       let contents = e.target.result;
       alert(contents);
-      new_content = contents.replace(/<title>(.*?)<\/title>/g,"<title></title>")
+      new_content = contents.replace(/<title>(.*?)<\/title>/g,"<title></title>");
       content.innerText = new_content
     }
     r.readAsText(f);
@@ -41,11 +43,31 @@ function readSingleFile(evt) {
 }
 
 async function save() {
-    alert(new_content);
-    let file_name = selectElement.value + '.html'
-    let file = new Blob([new_content], {type: 'text/html'});
-    await saveFile(file, file_name);
+  alert(new_content);
+  let getFileLoad = event => console.log('FileRead.onload ', event.target.result)
+  let file_name = selectElement.value + '.html';
+  let file = new Blob([new_content], {type: 'text/html'});
+  let url = URL.createObjectURL(blob)
+  await saveFile(file, file_name);
 }
+
+function download(){
+  const a = document.createElement('a');
+  document.body.appendChild(a);
+  a.style = 'display: none';
+  let file_name = selectElement.value + '.html';
+  let file = new Blob([new_content], {type: 'text/html'});
+  // 將 blob 放到 URL 上
+  url = window.URL.createObjectURL(file);
+  a.href = url;
+  a.download = file_name;
+  a.click();
+  // 釋放記憶體
+  a.href = '';
+  window.URL.revokeObjectURL(url);
+
+}
+
 document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
 </script>
 </body>
