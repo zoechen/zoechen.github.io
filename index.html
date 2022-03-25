@@ -21,8 +21,7 @@ import saveFile from 'save-file'
 var saveFile = require('save-file')
 const content = document.querySelector('#htos');
 var new_content ='';
-var form = document.forms[0];
-var selectElement = form.querySelector('input[name="new"]');
+const selectElement = document.querySelector('input[name="new"]');
 
 function readSingleFile(evt) {
   //Retrieve the first (and only!) File from the FileList object
