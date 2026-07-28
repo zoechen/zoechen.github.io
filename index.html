@@ -1,72 +1,464 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoe Workspace</title>
-  <script src="https://unpkg.com/@seregpie/save-file"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>陳依琦 · 前端工程師</title>
+<meta name="description" content="陳依琦的履歷 - 前端工程師，精通 Vue、React、Flutter" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-950:#10141c;
+    --ink-800:#1b2233;
+    --ink-700:#293349;
+    --paper:#f5f6f3;
+    --paper-dim:#e9ebe4;
+    --text-body:#262b33;
+    --text-soft:#5b6270;
+    --teal:#17a398;
+    --teal-dim:#0f766e;
+    --amber:#e0a12f;
+    --rule:#d9dcd3;
+    --code-red:#ff5f57;
+    --code-yellow:#ffbd2e;
+    --code-green:#28c840;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#dfe1d8;
+    color:var(--text-body);
+    font-family:'Inter',-apple-system,'Noto Sans TC',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:2.5rem 1.25rem;
+    line-height:1.6;
+  }
+
+  .editor{
+    max-width:980px;
+    margin:0 auto;
+    background:var(--paper);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -25px rgba(16,20,28,0.35), 0 2px 8px rgba(16,20,28,0.08);
+  }
+
+  /* ===== 頂部視窗列，呼應開發者身分：這份履歷本身就是一份「原始碼」 ===== */
+  .titlebar{
+    background:var(--ink-950);
+    display:flex;
+    align-items:center;
+    gap:0.9rem;
+    padding:0.7rem 1.1rem;
+  }
+  .dots{display:flex;gap:0.45rem;}
+  .dot{width:11px;height:11px;border-radius:50%;}
+  .dot.red{background:var(--code-red);}
+  .dot.yellow{background:var(--code-yellow);}
+  .dot.green{background:var(--code-green);}
+  .tab{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:#cfd4dd;
+    background:var(--ink-800);
+    padding:0.32rem 0.85rem;
+    border-radius:6px 6px 0 0;
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+  }
+  .tab::before{content:'●';color:var(--teal);font-size:0.55rem;}
+
+  .layout{
+    display:grid;
+    grid-template-columns:290px 1fr;
+  }
+
+  /* ===== 側欄 ===== */
+  .sidebar{
+    background:var(--ink-950);
+    color:#dfe3ec;
+    padding:2.4rem 1.9rem 2.6rem;
+  }
+
+  .name{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.7rem;
+    font-weight:700;
+    color:#fff;
+    margin:0.2rem 0 0.15rem;
+    letter-spacing:0.01em;
+  }
+  .role{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.85rem;
+    color:var(--teal);
+    margin:0 0 1.35rem;
+  }
+  .role::before{content:'// ';color:#5b6577;}
+
+  .trait-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.4rem;
+    margin-bottom:1.5rem;
+  }
+  .trait-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    padding:0.22rem 0.55rem;
+    border-radius:999px;
+    background:rgba(224,161,47,0.14);
+    color:var(--amber);
+    border:1px solid rgba(224,161,47,0.35);
+    white-space:nowrap;
+  }
+
+  .contact-list{
+    list-style:none;
+    margin:0 0 1.9rem;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+    font-size:0.85rem;
+  }
+  .contact-list li{display:flex;align-items:center;gap:0.55rem;}
+  .contact-list svg{flex:none;width:15px;height:15px;color:var(--teal);}
+  .contact-list a{color:#dfe3ec;text-decoration:none;word-break:break-all;}
+  .contact-list a:hover{color:var(--teal);text-decoration:underline;}
+
+  .side-heading{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#7c869a;
+    margin:0 0 0.75rem;
+    padding-top:1.3rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .side-heading:first-of-type{border-top:none;padding-top:0;}
+
+  /* 技能：以自閉合 JSX 元件標籤呈現，呼應前端工程師身分 */
+  .skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-bottom:0.4rem;
+  }
+  .skill-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:#c9e9e5;
+    background:rgba(23,163,152,0.12);
+    border:1px solid rgba(23,163,152,0.32);
+    border-radius:6px;
+    padding:0.3rem 0.55rem;
+  }
+  .skill-tag .bracket{color:#5b8f8a;}
+
+  .lang-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.85rem;
+    padding:0.35rem 0;
+  }
+  .lang-level{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--amber);
+  }
+
+  /* ===== 主內容 ===== */
+  .main{padding:2.6rem 3rem 3.2rem;}
+
+  .summary{
+    font-size:0.98rem;
+    color:var(--text-body);
+    padding-bottom:2rem;
+    margin-bottom:2.2rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .summary p{margin:0;}
+
+  .section{margin-bottom:2.4rem;}
+  .section:last-child{margin-bottom:0;}
+
+  .section-heading{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.85rem;
+    color:var(--teal-dim);
+    margin:0 0 1.3rem;
+    display:flex;
+    align-items:baseline;
+    gap:0.5rem;
+  }
+  .section-heading::before{content:'//';color:#a8afb9;}
+  .section-heading .zh{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--ink-950);
+    letter-spacing:0.02em;
+  }
+
+  .entry{
+    position:relative;
+    padding:0 0 1.6rem 1.4rem;
+    border-left:2px solid var(--paper-dim);
+  }
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:'';
+    position:absolute;
+    left:-6px;
+    top:0.35rem;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--teal);
+  }
+
+  .entry-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:0.5rem 1rem;
+    margin-bottom:0.35rem;
+  }
+  .entry-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--ink-950);
+  }
+  .entry-title .role-part{color:var(--ink-950);}
+  .entry-title .sep{color:#9aa1ab;font-weight:400;margin:0 0.3rem;}
+  .entry-title .company-part{color:var(--teal-dim);}
+
+  .entry-date{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.74rem;
+    color:var(--text-soft);
+    background:var(--paper-dim);
+    padding:0.18rem 0.55rem;
+    border-radius:5px;
+    white-space:nowrap;
+  }
+
+  .entry ul{
+    margin:0;
+    padding-left:1.15rem;
+    font-size:0.92rem;
+    color:var(--text-body);
+  }
+  .entry li{margin-bottom:0.3rem;}
+  .entry li:last-child{margin-bottom:0;}
+  .entry li::marker{color:var(--teal);}
+
+  .edu-grid{
+    display:grid;
+    gap:1rem;
+  }
+  .edu-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    padding:0.9rem 1.1rem;
+    background:var(--paper-dim);
+    border-radius:8px;
+  }
+  .edu-name{font-weight:600;color:var(--ink-950);font-size:0.95rem;}
+  .edu-major{color:var(--teal-dim);font-size:0.85rem;margin-top:0.15rem;}
+  .edu-date{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--text-soft);
+    white-space:nowrap;
+  }
+
+  footer.credit{
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:#8a90a0;
+    padding:1.4rem 0 0.4rem;
+  }
+
+  @media (max-width:760px){
+    .layout{grid-template-columns:1fr;}
+    .sidebar{padding:2rem 1.6rem;}
+    .main{padding:2rem 1.6rem 2.4rem;}
+    body{padding:1rem 0.6rem;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .editor{box-shadow:none;border-radius:0;max-width:100%;}
+    .titlebar{display:none;}
+    .layout{grid-template-columns:250px 1fr;}
+    a{color:inherit;text-decoration:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
 </head>
 <body>
-  <h3>上傳html改title</h3>
-  <form action="">
-    <input type="file" name="old" accept="html" id="htmlFile">
-    <input type="text" name="new" />
-    <button type="button" onclick="save">Save</button>
-    <button type="button" onclick="download">Download</button>
-  </form>
-  
-  <p id="htos"></p>
-<script>
-const content = document.querySelector('#htos');
-var new_content ='';
-const selectElement = document.querySelector('input[name="new"]');
+  <div class="editor">
+    <div class="titlebar">
+      <div class="dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="tab">resume / 陳依琦.tsx</div>
+    </div>
 
+    <div class="layout">
+      <!-- 側欄 -->
+      <aside class="sidebar">
+        <h1 class="name">陳依琦</h1>
+        <p class="role">前端工程師</p>
 
-function readSingleFile(evt) {
-  //Retrieve the first (and only!) File from the FileList object
-  let f = evt.target.files[0]; 
-  if (f) {
-    let r = new FileReader();
-    r.onload = function(e) { 
-      let contents = e.target.result;
-      alert(contents);
-      new_content = contents.replace(/<title>(.*?)<\/title>/g,"<title></title>");
-      content.innerText = new_content
-    }
-    r.readAsText(f);
-  } else { 
-    alert("Failed to load file");
-  }
-}
+        <div class="trait-tags">
+          <span class="trait-tag">INTJ</span>
+          <span class="trait-tag">顯示生產者 5/1</span>
+          <span class="trait-tag">一分人</span>
+        </div>
 
-async function save() {
-  alert(new_content);
-  let getFileLoad = event => console.log('FileRead.onload ', event.target.result)
-  let file_name = selectElement.value + '.html';
-  let file = new Blob([new_content], {type: 'text/html'});
-  let url = URL.createObjectURL(blob)
-  await saveFile(file, file_name);
-}
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>台灣</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+            <a href="mailto:iki0723@gmail.com">iki0723@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1.1.4-1.8 1-2.3-3.4-.4-7-1.7-7-7.6a5.9 5.9 0 0 1 1.6-4.1 5.5 5.5 0 0 1 .1-4S6.7 3 9 4.5a12.6 12.6 0 0 1 6.6 0C17.9 3 19 4.1 19 4.1a5.5 5.5 0 0 1 .1 4A5.9 5.9 0 0 1 20.7 12c0 5.9-3.6 7.2-7 7.6.6.5 1 1.5 1 2.9V26"/></svg>
+            <a href="https://github.com/zoechen" target="_blank" rel="noopener">github.com/zoechen</a>
+          </li>
+        </ul>
 
-function download(){
-  const a = document.createElement('a');
-  document.body.appendChild(a);
-  a.style = 'display: none';
-  let file_name = selectElement.value + '.html';
-  let file = new Blob([new_content], {type: 'text/html'});
-  // 將 blob 放到 URL 上
-  url = window.URL.createObjectURL(file);
-  a.href = url;
-  a.download = file_name;
-  a.click();
-  // 釋放記憶體
-  a.href = '';
-  window.URL.revokeObjectURL(url);
+        <h2 class="side-heading">技能</h2>
+        <div class="skill-tags">
+          <span class="skill-tag"><span class="bracket">&lt;</span>Vue<span class="bracket"> /&gt;</span></span>
+          <span class="skill-tag"><span class="bracket">&lt;</span>React<span class="bracket"> /&gt;</span></span>
+          <span class="skill-tag"><span class="bracket">&lt;</span>Flutter<span class="bracket"> /&gt;</span></span>
+          <span class="skill-tag"><span class="bracket">&lt;</span>Figma<span class="bracket"> /&gt;</span></span>
+          <span class="skill-tag"><span class="bracket">&lt;</span>VSCode<span class="bracket"> /&gt;</span></span>
+          <span class="skill-tag"><span class="bracket">&lt;</span>Vibe·coding<span class="bracket"> /&gt;</span></span>
+        </div>
 
-}
+        <h2 class="side-heading">語言</h2>
+        <div class="lang-row">
+          <span>English</span>
+          <span class="lang-level">中階</span>
+        </div>
+      </aside>
 
-document.getElementById('htmlFile').addEventListener('change', readSingleFile, false);
-</script>
+      <!-- 主內容 -->
+      <main class="main">
+        <div class="summary">
+          <p>
+            擁有近 9 年開發與 UI/UX 設計經驗，精通 React、Vue 及 Flutter，具備專業技術背景與豐富實戰經驗。
+            具備 INTJ 獨立自律特質，專注於程式開發與技術邏輯，致力於持續提升專業能力。
+            曾參與金流管理、物聯網及平台維護，專注於 RWD 切版與效能優化。
+            始終保持謙遜與開放心態，善用 Vibe coding 靈活協作，致力在團隊中穩健產出高質量的產品體驗。
+          </p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-heading"><span class="zh">工作經驗</span></h2>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title"><span class="role-part">前端工程師</span><span class="sep">·</span><span class="company-part">謙光有限公司</span></span>
+              <span class="entry-date">2022.10 – 2025.06 ・ 2年9個月</span>
+            </div>
+            <ul>
+              <li>負責博弈包網平台前端架構設計與開發，運用 Vue/React 實現遊戲介面的整合。</li>
+              <li>開發虛擬貨幣金流管理平台，串接 Web3/API 介面，優化報表看板與資產圖表。</li>
+              <li>引入 Vibe coding / AI 輔助開發流程，使核心模組開發效率提升，縮短專案上線時程。</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title"><span class="role-part">前端工程師</span><span class="sep">·</span><span class="company-part">天脈科技股份有限公司</span></span>
+              <span class="entry-date">2021.08 – 2022.09 ・ 1年2個月</span>
+            </div>
+            <ul>
+              <li>航運貨櫃媒合服務平台(Vue+Quasar)的核心功能迭代與維護，考量物流情境優化媒合流程提升媒合效率。</li>
+              <li>健檢服務平台(Vue+Ant Design)前端架構設計與開發，與 UI/UX 協同業務針對使用情境量身訂製。</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title"><span class="role-part">前端工程師</span><span class="sep">·</span><span class="company-part">長穩智能科技股份有限公司台灣分公司</span></span>
+              <span class="entry-date">2019.06 – 2021.08 ・ 2年3個月</span>
+            </div>
+            <ul>
+              <li>負責 IoT 智慧畜牧(Flutter APP)的前端開發，即時處理感測器數據流，並以圖像化圖表直觀呈現。</li>
+              <li>畜牧生殖管理系統(Vue+Element)維護及開發，重構舊有前端程式碼，建立元件庫提高代碼複用率並降低後續維護成本。</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title"><span class="role-part">前端設計師</span><span class="sep">·</span><span class="company-part">新加坡商合眾科技顧問有限公司台灣</span></span>
+              <span class="entry-date">2018.06 – 2019.06 ・ 1年1個月</span>
+            </div>
+            <ul>
+              <li>兼任 UI/UX 設計與前端開發，使用 Figma 繪製原型並獨立完成 React / Vue 的高還原度切版。</li>
+              <li>優化 Web APP 的互動效能與動畫流暢度，顯著提升行動端用戶的使用體驗。</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title"><span class="role-part">前端設計師</span><span class="sep">·</span><span class="company-part">翔苡有限公司</span></span>
+              <span class="entry-date">2016.12 – 2018.05 ・ 1年6個月</span>
+            </div>
+            <ul>
+              <li>獨立製作多款 RWD（響應式）品牌官網與活動頁面，確保跨瀏覽器與跨裝置的相容性。</li>
+              <li>重新設計與優化管理後台的使用者介面（UI），大幅減少內部運營人員的操作步驟與錯誤率。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-heading"><span class="zh">學歷</span></h2>
+          <div class="edu-grid">
+            <div class="edu-card">
+              <div>
+                <div class="edu-name">新竹教育大學（清大南大校區）</div>
+                <div class="edu-major">數位學習科技</div>
+              </div>
+              <div class="edu-date">2008 – 2011</div>
+            </div>
+            <div class="edu-card">
+              <div>
+                <div class="edu-name">國立台中科技大學</div>
+                <div class="edu-major">多媒體設計</div>
+              </div>
+              <div class="edu-date">2002 – 2005</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
 </body>
 </html>
