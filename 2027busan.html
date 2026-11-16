@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>釜山六天五夜自由行手帳 | 2027.04.06 - 04.11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-mint: #EEF4F3;
+      --white: #FFFFFF;
+      --navy: #23406B;
+      --red: #D9482F;
+      --yellow: #F2B441;
+      --yellow-soft: #FFF8E7;
+      --pink: #E58FA6;
+      --pink-soft: #FDF1F4;
+      --pine: #2F7D6B;
+      --sky: #7FB9D6;
+      --sky-soft: #EDF6FA;
+      --neutral-soft: #F3F6F7;
+      --text-main: #1E2D3D;
+      --text-muted: #52657A;
+      --border-w: 1.5px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow-card: 0 3px 0 rgba(35, 64, 107, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-mint);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding-bottom: 48px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .app-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* 標籤樣式 */
+    .badge-sample {
+      display: inline-block;
+      background-color: var(--red);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-confirmed {
+      display: inline-block;
+      background-color: var(--pine);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-must {
+      display: inline-block;
+      background-color: var(--red);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-left: 6px;
+    }
+
+    .badge-save {
+      display: inline-block;
+      background-color: var(--pine);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    /* 頁首與釜山主題插畫 */
+    .hero-card {
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .hero-header {
+      padding: 18px 18px 12px;
+      text-align: center;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      background-color: var(--sky-soft);
+      color: var(--navy);
+      border: 1px solid var(--navy);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 99px;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    .hero-dates {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .busan-svg-wrap {
+      width: 100%;
+      background-color: #E3F1F6;
+      border-top: var(--border-w) solid var(--navy);
+      border-bottom: var(--border-w) solid var(--navy);
+      line-height: 0;
+    }
+
+    .busan-svg-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* SVG 柔和動畫 */
+    @keyframes capsuleMove {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(18px); }
+    }
+    @keyframes lanternSway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes steamRise {
+      0% { opacity: 0.2; transform: translateY(2px); }
+      50% { opacity: 0.85; transform: translateY(-4px); }
+      100% { opacity: 0.2; transform: translateY(-9px); }
+    }
+    @keyframes waveShift {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-8px); }
+    }
+
+    .anim-capsule { animation: capsuleMove 6s ease-in-out infinite; }
+    .anim-lantern { transform-origin: 315px 124px; animation: lanternSway 3.2s ease-in-out infinite; }
+    .anim-steam-1 { animation: steamRise 2.8s ease-in-out infinite; }
+    .anim-steam-2 { animation: steamRise 2.8s ease-in-out 1.1s infinite; }
+    .anim-wave { animation: waveShift 4.5s ease-in-out infinite; }
+
+    /* 四大主分類導覽按鈕（隨頁面捲動，高度 >= 64px） */
+    .main-nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .nav-btn {
+      min-height: 68px;
+      background-color: var(--white);
+      color: var(--navy);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 10px 12px;
+      transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+    }
+
+    .nav-btn:active {
+      transform: translateY(2px);
+    }
+
+    .nav-btn.active {
+      background-color: var(--navy);
+      color: var(--white);
+    }
+
+    .nav-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    /* 區塊切換 */
+    .tab-section {
+      display: none;
+    }
+    .tab-section.active {
+      display: block;
+    }
+
+    /* 通用卡片樣式 */
+    .card {
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* 智慧倒數計時器 */
+    .countdown-box {
+      background-color: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+      border: var(--border-w) solid var(--navy);
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      color: var(--yellow);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0;
+    }
+
+    .cd-unit {
+      background-color: var(--white);
+      color: var(--navy);
+      border-radius: 12px;
+      min-width: 68px;
+      padding: 8px 6px;
+    }
+
+    .cd-num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .cd-txt {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .countdown-sub {
+      font-size: 0.88rem;
+      opacity: 0.92;
+      margin-top: 6px;
+    }
+
+    /* 登機證風格卡片 */
+    .boarding-pass {
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .bp-header {
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .bp-header.return {
+      background-color: var(--pine);
+    }
+
+    .bp-body {
+      padding: 16px;
+    }
+
+    .bp-route {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .bp-port {
+      text-align: center;
+      flex: 1;
+    }
+
+    .bp-code {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .bp-city {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .bp-time {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--red);
+      margin-top: 4px;
+    }
+
+    .bp-plane {
+      flex: 1;
+      text-align: center;
+      padding: 0 6px;
+    }
+
+    .bp-duration {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      background-color: var(--sky-soft);
+      padding: 2px 8px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+
+    .bp-line {
+      border-top: 2px dashed var(--navy);
+      margin: 6px 0;
+      position: relative;
+    }
+
+    .bp-meta {
+      border-top: 1.5px dashed var(--navy);
+      padding-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+
+    .bp-meta-item span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .bp-meta-item strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* 交通省錢總覽卡 */
+    .transit-opt-list {
+      list-style: none;
+    }
+
+    .transit-opt-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #CBD8D6;
+      font-size: 0.95rem;
+    }
+
+    .transit-opt-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* 每日行程：日期選擇器 */
+    .day-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .day-btn {
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-md);
+      padding: 8px 6px;
+      text-align: center;
+      cursor: pointer;
+      font-family: inherit;
+      color: var(--navy);
+      transition: all 0.15s ease;
+    }
+
+    .day-btn.active {
+      background-color: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-card);
+    }
+
+    .day-btn-num {
+      font-size: 0.82rem;
+      font-weight: 900;
+      display: block;
+    }
+
+    .day-btn-date {
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    /* 每日隨捲動保持可見的資訊摘要 (Sticky) */
+    .sticky-summary {
+      position: sticky;
+      top: 8px;
+      z-index: 30;
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 10px rgba(35, 64, 107, 0.16);
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+
+    .sticky-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px dashed #CBD8D6;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .weather-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+
+    .rain-prob {
+      background-color: var(--sky-soft);
+      color: var(--navy);
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .outfit-tip {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hotel-mini {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--neutral-soft);
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+    }
+
+    .hotel-mini-info strong {
+      color: var(--navy);
+      display: block;
+    }
+
+    .btn-mini-map {
+      background-color: var(--pine);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 晴天 / 雨天切換列 */
+    .weather-mode-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .mode-btn {
+      min-height: 46px;
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-md);
+      background-color: var(--white);
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .mode-btn.active.sunny {
+      background-color: var(--yellow);
+      color: var(--navy);
+    }
+
+    .mode-btn.active.rainy {
+      background-color: var(--sky);
+      color: var(--navy);
+    }
+
+    /* 行程卡片彈性進場動畫 */
+    @keyframes popInCard {
+      0% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+      70% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.005);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .timeline-item-wrap {
+      animation: popInCard 0.36s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* 行程卡片類型配色 */
+    .spot-card {
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 15px;
+      background-color: var(--white);
+      transition: opacity 0.2s ease;
+    }
+
+    .spot-card.type-sight { background-color: var(--sky-soft); }
+    .spot-card.type-food { background-color: var(--yellow-soft); }
+    .spot-card.type-shop { background-color: var(--pink-soft); }
+    .spot-card.type-transit { background-color: var(--neutral-soft); }
+
+    .spot-card.completed {
+      opacity: 0.65;
+    }
+
+    .spot-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .spot-time-badge {
+      display: inline-block;
+      background-color: var(--navy);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 8px;
+      margin-bottom: 4px;
+    }
+
+    .spot-title {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    .spot-card.completed .spot-title {
+      text-decoration: line-through;
+    }
+
+    .check-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 1.5px solid var(--navy);
+      background-color: var(--white);
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .check-toggle.checked {
+      background-color: var(--pine);
+      color: var(--white);
+      border-color: var(--pine);
+    }
+
+    .spot-details {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .spot-meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .meta-tag {
+      background-color: var(--white);
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 8px;
+    }
+
+    .spot-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: var(--white);
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+      border-radius: 10px;
+      padding: 7px 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* 景點之間的交通連接指引 */
+    .transit-connector {
+      margin: 10px 0 10px 18px;
+      padding: 10px 14px;
+      border-left: 3px dashed var(--navy);
+      background-color: var(--white);
+      border-top: 1px solid #C8D6D4;
+      border-right: 1px solid #C8D6D4;
+      border-bottom: 1px solid #C8D6D4;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+    }
+
+    .transit-head {
+      font-weight: 900;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .transit-fare {
+      background-color: var(--pine);
+      color: var(--white);
+      font-size: 0.78rem;
+      padding: 1px 8px;
+      border-radius: 6px;
+    }
+
+    .transit-sub {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    /* 每日花費記帳（韓元 -> 新台幣） */
+    .expense-box {
+      background-color: var(--white);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      margin-top: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .rate-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--neutral-soft);
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .rate-input {
+      width: 90px;
+      padding: 4px 8px;
+      border: 1.5px solid var(--navy);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .expense-form {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr auto;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .txt-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 8px 10px;
+      border: 1.5px solid var(--navy);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      min-height: 44px;
+      background-color: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 0 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .expense-list {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    .expense-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed #CBD8D6;
+      font-size: 0.92rem;
+    }
+
+    .btn-del {
+      background: none;
+      border: 1px solid var(--red);
+      color: var(--red);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+
+    .expense-total-bar {
+      background-color: var(--yellow-soft);
+      border: 1.5px solid var(--navy);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    /* 行前清單 */
+    .progress-wrap {
+      margin-bottom: 14px;
+    }
+
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 14px;
+      background-color: var(--neutral-soft);
+      border: 1.5px solid var(--navy);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--pine);
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+
+    .checklist-add {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .checklist-ul {
+      list-style: none;
+    }
+
+    .checklist-li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed #CBD8D6;
+    }
+
+    .checklist-li:last-child {
+      border-bottom: none;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.98rem;
+    }
+
+    .check-label input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--pine);
+      flex-shrink: 0;
+    }
+
+    .check-label.done span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* 住宿與實用資訊 */
+    .hotel-card-detail {
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 15px;
+      margin-bottom: 14px;
+      background-color: var(--white);
+    }
+
+    .hotel-nights-tag {
+      background-color: var(--navy);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .hotel-grid-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background-color: var(--neutral-soft);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+    }
+
+    .hotel-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-naver {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 100%;
+      min-height: 46px;
+      background-color: var(--pine);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1.5px solid var(--navy);
+    }
+
+    .btn-gmap-full {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 100%;
+      min-height: 46px;
+      background-color: var(--sky-soft);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1.5px solid var(--navy);
+    }
+
+    .shop-zone {
+      background-color: var(--pink-soft);
+      border: 1.5px solid var(--navy);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .shop-zone h4 {
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .emg-box {
+      background-color: var(--red);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 10px 6px;
+      text-align: center;
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+    }
+
+    .emg-num {
+      font-size: 1.35rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .emg-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* 返回主選單快捷按鈕 */
+    .back-top-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 54px;
+      margin-top: 20px;
+      background-color: var(--white);
+      color: var(--navy);
+      border: var(--border-w) solid var(--navy);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* 尊重裝置減少動態效果設定 */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container" id="topMenu">
+    <!-- 首頁標題與釜山原創動態 SVG 插畫 -->
+    <header class="hero-card">
+      <div class="hero-header">
+        <span class="hero-subtitle">韓國釜山・日系手帳風自由行</span>
+        <h1 class="hero-title">釜山六天五夜海風之旅</h1>
+        <p class="hero-dates">2027 年 4 月 6 日（二）至 4 月 11 日（日）</p>
+      </div>
+
+      <!-- 原創釜山在地元素向量插畫：廣安大橋、海雲台天空膠囊列車、韓國布帳馬車屋台與海面波紋 -->
+      <div class="busan-svg-wrap" role="img" aria-label="釜山廣安大橋、天空膠囊列車與海邊布帳馬車插畫">
+        <svg viewBox="0 0 600 205" xmlns="http://www.w3.org/2000/svg">
+          <!-- 天空背景與太陽 -->
+          <rect width="600" height="150" fill="#E6F3F8" />
+          <circle cx="515" cy="45" r="22" fill="#F2B441" stroke="#23406B" stroke-width="2" />
+          <!-- 櫻花點綴（冬柏站賞櫻意象） -->
+          <g fill="#E58FA6" stroke="#23406B" stroke-width="1.2">
+            <circle cx="58" cy="36" r="6" />
+            <circle cx="70" cy="32" r="5" />
+            <circle cx="65" cy="44" r="5" />
+            <circle cx="430" cy="30" r="5" />
+            <circle cx="441" cy="36" r="4.5" />
+          </g>
+
+          <!-- 遠景：廣安大橋 -->
+          <g stroke="#23406B" stroke-width="2.2" fill="none">
+            <rect x="130" y="42" width="10" height="98" fill="#FFFFFF" />
+            <line x1="126" y1="62" x2="144" y2="62" />
+            <line x1="126" y1="88" x2="144" y2="88" />
+            <rect x="330" y="42" width="10" height="98" fill="#FFFFFF" />
+            <line x1="326" y1="62" x2="344" y2="62" />
+            <line x1="326" y1="88" x2="344" y2="88" />
+            <path d="M 30 112 Q 80 110 135 46 Q 235 125 335 46 Q 390 110 445 112" stroke="#7FB9D6" stroke-width="3" />
+            <path d="M 30 112 Q 80 110 135 46 Q 235 125 335 46 Q 390 110 445 112" stroke="#23406B" stroke-width="1.8" />
+            <line x1="175" y1="76" x2="175" y2="112" stroke-width="1.3" />
+            <line x1="205" y1="90" x2="205" y2="112" stroke-width="1.3" />
+            <line x1="235" y1="95" x2="235" y2="112" stroke-width="1.3" />
+            <line x1="265" y1="90" x2="265" y2="112" stroke-width="1.3" />
+            <line x1="295" y1="76" x2="295" y2="112" stroke-width="1.3" />
+            <rect x="20" y="112" width="430" height="7" fill="#FFFFFF" />
+          </g>
+
+          <!-- 中景：海雲台藍線公園高架軌道與天空膠囊列車 -->
+          <g>
+            <line x1="0" y1="142" x2="265" y2="142" stroke="#23406B" stroke-width="3" />
+            <line x1="45" y1="142" x2="45" y2="155" stroke="#23406B" stroke-width="3" />
+            <line x1="115" y1="142" x2="115" y2="155" stroke="#23406B" stroke-width="3" />
+            <line x1="185" y1="142" x2="185" y2="155" stroke="#23406B" stroke-width="3" />
+            <g class="anim-capsule">
+              <rect x="72" y="118" width="44" height="22" rx="7" fill="#D9482F" stroke="#23406B" stroke-width="2" />
+              <rect x="78" y="123" width="13" height="9" rx="2" fill="#FFFFFF" stroke="#23406B" stroke-width="1.4" />
+              <rect x="96" y="123" width="13" height="9" rx="2" fill="#FFFFFF" stroke="#23406B" stroke-width="1.4" />
+              <rect x="124" y="118" width="44" height="22" rx="7" fill="#F2B441" stroke="#23406B" stroke-width="2" />
+              <rect x="130" y="123" width="13" height="9" rx="2" fill="#FFFFFF" stroke="#23406B" stroke-width="1.4" />
+              <rect x="148" y="123" width="13" height="9" rx="2" fill="#FFFFFF" stroke="#23406B" stroke-width="1.4" />
+            </g>
+          </g>
+
+          <!-- 前景右側：釜山海邊布帳馬車屋台、燈籠與魚板蒸氣 -->
+          <g>
+            <rect x="275" y="140" width="325" height="16" fill="#2F7D6B" stroke="#23406B" stroke-width="2" />
+            <polygon points="310,140 322,96 435,96 447,140" fill="#D9482F" stroke="#23406B" stroke-width="2" />
+            <rect x="334" y="106" width="88" height="24" rx="4" fill="#FFF8E7" stroke="#23406B" stroke-width="1.6" />
+            <text x="378" y="122" text-anchor="middle" font-size="11" font-weight="900" fill="#23406B">釜山屋台・魚板</text>
+            <path class="anim-steam-1" d="M 358 92 Q 354 84 360 76" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            <path class="anim-steam-2" d="M 396 92 Q 401 84 395 76" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            <g class="anim-lantern">
+              <line x1="315" y1="112" x2="315" y2="122" stroke="#23406B" stroke-width="2" />
+              <ellipse cx="315" cy="129" rx="7" ry="9" fill="#F2B441" stroke="#23406B" stroke-width="1.8" />
+            </g>
+          </g>
+
+          <!-- 釜山大海與波紋 -->
+          <rect x="0" y="152" width="600" height="53" fill="#7FB9D6" />
+          <line x1="0" y1="152" x2="600" y2="152" stroke="#23406B" stroke-width="2" />
+          <g class="anim-wave" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round">
+            <path d="M 25 168 Q 45 163 65 168 T 105 168" />
+            <path d="M 180 182 Q 200 177 220 182 T 260 182" />
+            <path d="M 360 170 Q 380 165 400 170 T 440 170" />
+            <path d="M 480 186 Q 500 181 520 186 T 560 186" />
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <!-- 四大分類導覽選單（高度 >= 68px，隨頁面正常捲動） -->
+    <nav class="main-nav" aria-label="主要功能選單">
+      <button type="button" class="nav-btn active" data-tab="overview">
+        <span class="nav-icon">🧭</span>
+        <span>總覽</span>
+      </button>
+      <button type="button" class="nav-btn" data-tab="itinerary">
+        <span class="nav-icon">🗓️</span>
+        <span>每日行程</span>
+      </button>
+      <button type="button" class="nav-btn" data-tab="checklist">
+        <span class="nav-icon">🎒</span>
+        <span>行前清單</span>
+      </button>
+      <button type="button" class="nav-btn" data-tab="hotels">
+        <span class="nav-icon">🏨</span>
+        <span>住宿速查</span>
+      </button>
+    </nav>
+
+    <!-- ==================== 1. 總覽區塊 ==================== -->
+    <section id="tab-overview" class="tab-section active">
+      <!-- 智慧出發倒數 / 旅程進度提醒 -->
+      <div class="countdown-box" id="countdownBox">
+        <div class="countdown-label" id="cdLabel">距離釜山出發還有</div>
+        <div class="countdown-grid" id="cdGrid">
+          <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-txt">天</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-txt">時</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-txt">分</span></div>
+        </div>
+        <div class="countdown-sub" id="cdSub">2027/04/06（二）16:40 桃園機場出發</div>
+      </div>
+
+      <!-- 去程登機證 -->
+      <div class="boarding-pass">
+        <div class="bp-header">
+          <span>✈️ 去程航班・台灣虎航 Tigerair Taiwan</span>
+          <span class="badge-confirmed">已確認</span>
+        </div>
+        <div class="bp-body">
+          <div class="bp-route">
+            <div class="bp-port">
+              <div class="bp-code">TPE</div>
+              <div class="bp-city">台北桃園 T1</div>
+              <div class="bp-time">16:40</div>
+            </div>
+            <div class="bp-plane">
+              <span class="bp-duration">飛行 2h 15m</span>
+              <div class="bp-line"></div>
+              <span style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">韓國快 1 小時</span>
+            </div>
+            <div class="bp-port">
+              <div class="bp-code">PUS</div>
+              <div class="bp-city">釜山金海 國際線</div>
+              <div class="bp-time">19:55</div>
+            </div>
+          </div>
+          <div class="bp-meta">
+            <div class="bp-meta-item"><span>出發日期</span><strong>2027/04/06 (二)</strong></div>
+            <div class="bp-meta-item"><span>航班編號</span><strong>IT 606</strong></div>
+            <div class="bp-meta-item"><span>建議報到</span><strong>14:10 前抵達</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 回程登機證 -->
+      <div class="boarding-pass">
+        <div class="bp-header return">
+          <span>🛫 回程航班・台灣虎航 Tigerair Taiwan</span>
+          <span class="badge-confirmed">已確認</span>
+        </div>
+        <div class="bp-body">
+          <div class="bp-route">
+            <div class="bp-port">
+              <div class="bp-code">PUS</div>
+              <div class="bp-city">釜山金海 國際線</div>
+              <div class="bp-time">20:45</div>
+            </div>
+            <div class="bp-plane">
+              <span class="bp-duration">飛行 2h 25m</span>
+              <div class="bp-line"></div>
+              <span style="font-size:0.8rem;color:var(--text-muted);font-weight:700;">當地時間起降</span>
+            </div>
+            <div class="bp-port">
+              <div class="bp-code">TPE</div>
+              <div class="bp-city">台北桃園 T1</div>
+              <div class="bp-time">22:10</div>
+            </div>
+          </div>
+          <div class="bp-meta">
+            <div class="bp-meta-item"><span>返程日期</span><strong>2027/04/11 (日)</strong></div>
+            <div class="bp-meta-item"><span>航班編號</span><strong>IT 607</strong></div>
+            <div class="bp-meta-item"><span>機場報到/退稅</span><strong>18:15 前抵達</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 交通費用最佳化攻略卡 -->
+      <div class="card">
+        <h2 class="section-heading">
+          <span>🚇 本次交通費用最佳化策略</span>
+          <span class="badge-save">省錢重點</span>
+        </h2>
+        <ul class="transit-opt-list">
+          <li>
+            <strong>1. 雙飯店分區住宿省跨區資費：</strong><br />
+            前 2 晚住<strong>海雲台海雲飯店公寓</strong>（步行即達海雲台沙灘、傳統市場與尾浦膠囊列車）；後 3 晚住<strong>釜山中央安凡尼飯店</strong>（2 號線國際金融中心・釜山銀行站 3 號出口，直通廣安里、海雲台與機場轉乘）。
+          </li>
+          <li>
+            <strong>2. 交通卡單趟計費優於地鐵一日券：</strong><br />
+            釜山地鐵一日券需 ₩6,000（搭滿 4 趟才回本），且<strong>不可搭金海輕軌與東海線電鐵</strong>。本行程每天地鐵僅 1～3 趟，全程刷 <strong>T-money / WOWPASS</strong>（第 1 區間 ₩1,600、30 分鐘內轉乘公車免費）最划算。
+          </li>
+          <li>
+            <strong>3. 機場往返最省轉乘路線：</strong><br />
+            去程搭<strong>金海輕軌 → 沙上站轉地鐵 2 號線直達海雲台</strong>（全程約 ₩2,300，免計程車長途資費）；回程從「國際金融中心・釜山銀行站」搭 2 號線到沙上站轉輕軌（約 ₩1,800，33 分鐘直達機場）。
+          </li>
+          <li>
+            <strong>4. 景點票券組合省錢建議：</strong><br />
+            Day 3（海岸列車＋Skyline Luge）與 Day 5（松島海上纜車＋ARTE MUSEUM）皆包含在 <strong>Visit Busan Pass（釜山通行證）</strong> 內，搭配使用比現場單買門票現省超過 ₩35,000！
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="back-top-btn" onclick="scrollToMenu()">⬆️ 返回主選單</button>
+    </section>
+
+    <!-- ==================== 2. 每日行程區塊 ==================== -->
+    <section id="tab-itinerary" class="tab-section">
+      <!-- 六天日期按鈕 -->
+      <div class="day-selector" id="daySelector"></div>
+
+      <!-- 隨捲動保持可見的每日摘要區 (天氣 + 住宿) -->
+      <div class="sticky-summary" id="stickySummary"></div>
+
+      <!-- 晴天 / 雨天備案切換 -->
+      <div class="weather-mode-bar">
+        <button type="button" class="mode-btn sunny active" id="btnSunny" onclick="setWeatherMode('sunny')">☀️ 晴天原定行程</button>
+        <button type="button" class="mode-btn rainy" id="btnRainy" onclick="setWeatherMode('rainy')">☔ 雨天室內備案</button>
+      </div>
+
+      <!-- 時間軸行程列表 -->
+      <div id="timelineContainer"></div>
+
+      <!-- 每日花費記帳（韓元 -> 新台幣） -->
+      <div class="expense-box">
+        <h3 class="section-heading">
+          <span>💰 當日花費紀錄（韓元換算台幣）</span>
+          <span id="expDayLabel" class="badge-save">Day 1</span>
+        </h3>
+        <div class="rate-bar">
+          <span>自訂匯率：1 韓元 (KRW) =</span>
+          <div>
+            <input type="number" step="0.0001" id="exchangeRateInput" class="rate-input" value="0.0235" />
+            <span>TWD</span>
+          </div>
+        </div>
+        <form class="expense-form" onsubmit="addExpense(event)">
+          <input type="text" id="expTitle" class="txt-input" placeholder="項目（如：豬肉湯飯）" required />
+          <input type="number" id="expKrw" class="txt-input" placeholder="韓元 ₩" min="1" required />
+          <button type="submit" class="btn-primary">新增</button>
+        </form>
+        <ul class="expense-list" id="expenseList"></ul>
+        <div class="expense-total-bar">
+          <span>本日小計</span>
+          <span id="dayExpenseTotal">₩0（約 NT$0）</span>
+        </div>
+      </div>
+
+      <button type="button" class="back-top-btn" onclick="scrollToMenu()">⬆️ 返回主選單</button>
+    </section>
+
+    <!-- ==================== 3. 行前清單區塊 ==================== -->
+    <section id="tab-checklist" class="tab-section">
+      <div class="card">
+        <h2 class="section-heading">
+          <span>📊 整體準備進度</span>
+          <span id="checkCountBadge" class="badge-save">0 / 0 完成</span>
+        </h2>
+        <div class="progress-wrap">
+          <div class="progress-stats">
+            <span>準備完成率</span>
+            <span id="checkPercentText">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="checkProgressFill"></div>
+          </div>
+        </div>
+
+        <form class="checklist-add" onsubmit="addChecklistItem(event)">
+          <select id="newCheckCat" class="txt-input" aria-label="分類">
+            <option value="todo">行前待辦</option>
+            <option value="packing">行李準備</option>
+          </select>
+          <input type="text" id="newCheckText" class="txt-input" placeholder="新增準備項目..." required />
+          <button type="submit" class="btn-primary">加入</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="section-heading">📋 行前待辦事項（票券・預約・網卡）</h3>
+        <ul class="checklist-ul" id="todoListUl"></ul>
+      </div>
+
+      <div class="card">
+        <h3 class="section-heading">🧳 行李準備清單（4月春裝・日常用品）</h3>
+        <ul class="checklist-ul" id="packingListUl"></ul>
+      </div>
+
+      <button type="button" class="back-top-btn" onclick="scrollToMenu()">⬆️ 返回主選單</button>
+    </section>
+
+    <!-- ==================== 4. 住宿與實用資訊區塊 ==================== -->
+    <section id="tab-hotels" class="tab-section">
+      <!-- 住宿資訊卡 -->
+      <div class="card">
+        <h2 class="section-heading">
+          <span>🏨 住宿安排與 NAVER Map 導航</span>
+          <span class="badge-confirmed">已確認住宿</span>
+        </h2>
+        <div id="hotelListContainer"></div>
+      </div>
+
+      <!-- 釜山購物區域伴手禮與退稅提醒 -->
+      <div class="card">
+        <h2 class="section-heading">
+          <span>🛍️ 釜山分區伴手禮與韓國退稅提醒</span>
+        </h2>
+        <div class="shop-zone">
+          <h4>1. 海雲台／Centum City 新世界百貨</h4>
+          <p style="font-size:0.92rem;">推薦購買：韓國設計師香氛（Tamburins / Nonfiction）、Gentle Monster 墨鏡、百貨地下街精緻伴手禮。</p>
+        </div>
+        <div class="shop-zone">
+          <h4>2. 西面商圈／樂天百貨／樂天超市</h4>
+          <p style="font-size:0.92rem;">推薦購買：Olive Young 美妝保養品、HBAF 杏仁果、海苔酥、韓國拉麵、高麗人蔘飲與大創生活小物。</p>
+        </div>
+        <div class="shop-zone">
+          <h4>3. 南浦洞／BIFF 廣場／國際市場</h4>
+          <p style="font-size:0.92rem;">推薦購買：釜山魚板真空禮盒、傳統棉被、在地韓式零食與平價服飾配件。</p>
+        </div>
+        <div style="background-color:var(--yellow-soft);border:1.5px solid var(--navy);border-radius:12px;padding:12px;font-size:0.9rem;margin-top:8px;">
+          <strong>🧾 韓國退稅重點提醒：</strong><br />
+          • 認明 <strong>TAX FREE</strong> 標誌店家，<strong>單筆消費滿 ₩15,000</strong> 即可辦理退稅（約退 5%～8%）。<br />
+          • 結帳時主動出示<strong>護照正本</strong>，大多數美妝與超市支援「現場即時退稅」（直接扣除稅額結帳）。<br />
+          • 需機場退稅之單據，請於 4/11 <strong>18:15 前</strong>抵達金海機場，先掃描退稅機台（KIOSK）再託運行李。
+        </div>
+      </div>
+
+      <!-- 旅遊資訊速查與緊急聯絡電話 -->
+      <div class="card">
+        <h2 class="section-heading">
+          <span>🆘 韓國緊急聯絡與預訂編號速查</span>
+          <span class="badge-sample">範例</span>
+        </h2>
+        <div class="emergency-grid">
+          <a href="tel:112" class="emg-box">
+            <span class="emg-num">112</span>
+            <span class="emg-name">韓國報警電話</span>
+          </a>
+          <a href="tel:119" class="emg-box">
+            <span class="emg-num">119</span>
+            <span class="emg-name">消防・救護車</span>
+          </a>
+          <a href="tel:1330" class="emg-box" style="background-color:var(--navy);">
+            <span class="emg-num">1330</span>
+            <span class="emg-name">24H中文旅遊諮詢</span>
+          </a>
+        </div>
+        <div style="background-color:var(--neutral-soft);border-radius:12px;padding:12px;font-size:0.92rem;">
+          <p><strong>• 天空膠囊列車預約代號（範例）：</strong>BLP-20270407-8821（尾浦→青沙浦 10:00 場次）</p>
+          <p style="margin-top:6px;"><strong>• 西面醫美診所預約（範例）：</strong>4/09（五）10:30｜西面站 7 號出口（預約名：CHEN YI CHI）</p>
+          <p style="margin-top:6px;"><strong>• 海外旅平險保單（範例）：</strong>富邦產險快樂旅平卡｜緊急救援專線 +886-2-2345-6789</p>
+        </div>
+      </div>
+
+      <!-- 六天旅遊總支出彙整 -->
+      <div class="card">
+        <h2 class="section-heading">
+          <span>🧾 六天旅程總支出彙整</span>
+        </h2>
+        <div id="allDaysExpenseSummary"></div>
+      </div>
+
+      <button type="button" class="back-top-btn" onclick="scrollToMenu()">⬆️ 返回主選單</button>
+    </section>
+  </div>
+
+  <script>
+    /* =====================================================================
+       【可輕鬆修改的旅程資料區 TRIP_DATA】
+       未來只需修改下方文字、訂房編號或行程內容，網頁即自動更新
+       ===================================================================== */
+    const TRIP_DATA = {
+      startDateISO: "2027-04-06T16:40:00+08:00",
+      endDateISO: "2027-04-11T22:10:00+08:00",
+      hotels: [
+        {
+          id: "hotel-haeundae",
+          nightsLabel: "Day 1 - Day 2（4/6 - 4/8，共 2 晚）",
+          name: "海雲台海雲飯店公寓 (Haeundae Seacloud Hotel Residence)",
+          roomType: "海雲台海灘正前方飯店式公寓",
+          address: "釜山廣域市海雲台區海雲台海邊路 287（부산 해운대구 해운대해변로 287）",
+          station: "地鐵 2 號線「海雲台站」3 號 / 5 號出口",
+          walkTime: "步行約 5 分鐘",
+          checkIn: "15:00 後",
+          checkOut: "11:00 前",
+          bookingRef: "請填入訂房編號（範例：SCL-406408）",
+          googleMapUrl: "https://www.google.com/maps/search/?api=1&query=Haeundae+Seacloud+Hotel+Residence",
+          naverMapUrl: "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EC%94%A8%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%98%B8%ED%85%94"
+        },
+        {
+          id: "hotel-seomyeon",
+          nightsLabel: "Day 3 - Day 5（4/8 - 4/11，共 3 晚）",
+          name: "釜山中央安凡尼飯店 (Avani Central Busan)",
+          roomType: "Avani Deluxe Triple Room（豪華三人房）",
+          address: "釜山廣域市南區全浦大路 133（부산 남구 전포대로 133）",
+          station: "地鐵 2 號線「國際金融中心・釜山銀行站」3 號出口",
+          walkTime: "步行約 4 分鐘（距西面站僅 1 站）",
+          checkIn: "15:00 後",
+          checkOut: "12:00 前",
+          bookingRef: "請填入訂房編號（範例：AVN-408411）",
+          googleMapUrl: "https://www.google.com/maps/search/?api=1&query=Avani+Central+Busan",
+          naverMapUrl: "https://map.naver.com/p/search/%EC%95%84%EB%B0%94%EB%8B%88%EC%84%BC%ED%8A%B8%EB%9F%B4%EB%B6%80%EC%82%B0"
+        }
+      ],
+      days: [
+        {
+          dayNum: 1,
+          dateLabel: "4/6 (二)",
+          title: "抵達釜山・入住海雲台海雲飯店公寓",
+          weather: { icon: "🌤️", temp: "10°C ~ 17°C", rain: "10%", outfit: "晚間海邊風涼，建議穿薄長袖＋防風夾克。" },
+          hotelIndex: 0,
+          sunny: [
+            {
+              id: "d1-s1",
+              type: "transit",
+              time: "19:55",
+              title: "抵達釜山金海國際機場（PUS）",
+              desc: "辦理入境通關、提領託運行李，並於機場便利商店購買或儲值 T-money / WOWPASS 交通卡。",
+              tags: ["停留約 50 分鐘", "建議儲值 ₩20,000"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport",
+              transitToNext: {
+                mode: "輕軌 ＋ 地鐵 2 號線（最省錢路線）",
+                route: "機場站 → 沙上站（轉 2 號線往萇山方向）→ 海雲台站 3 號出口",
+                duration: "約 68 分鐘（含站內步行轉乘及出站步行 5 分鐘）",
+                fare: "刷卡約 ₩2,300（比計程車省 ₩25,000+）"
+              }
+            },
+            {
+              id: "d1-s2",
+              type: "transit",
+              time: "21:15",
+              title: "海雲台海雲飯店公寓 Check-in 放行李",
+              desc: "飯店位於海雲台沙灘正前方，下樓即是熱鬧的龜南路大街與海雲台傳統市場。",
+              tags: ["已確認住宿", "沙灘第一排"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Haeundae+Seacloud+Hotel+Residence",
+              transitToNext: {
+                mode: "全程步行",
+                route: "下樓直接步行至海雲台傳統市場／湯飯街",
+                duration: "約 150 公尺（步行 2 分鐘）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d1-s3",
+              type: "food",
+              time: "21:45",
+              title: "海雲台傳統市場 ＆ 牛肉湯飯一條街",
+              desc: "晚班機抵達後步行 2 分鐘即達！推薦吃熱騰騰的韓牛牛肉湯飯、辣炒年糕或烤盲鰻（百年蔘雞湯改排 Day 3 午餐享用最順路）。",
+              tags: ["韓式傳統小吃", "招牌：盲鰻、辣炒年糕、24H牛肉湯飯", "預算 ₩12,000~18,000", "免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Haeundae+Traditional+Market"
+            }
+          ],
+          rainy: [
+            {
+              id: "d1-r1",
+              type: "transit",
+              time: "19:55",
+              title: "抵達釜山金海國際機場（PUS）",
+              desc: "雨天建議直接在機場 1 樓超商買好透明雨傘與 T-money 交通卡。",
+              tags: ["停留約 50 分鐘"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport",
+              transitToNext: {
+                mode: "輕軌 ＋ 地鐵 2 號線",
+                route: "機場站 → 沙上站轉 2 號線 → 海雲台站 3 號出口",
+                duration: "約 68 分鐘",
+                fare: "刷卡約 ₩2,300"
+              }
+            },
+            {
+              id: "d1-r2",
+              type: "food",
+              time: "21:30",
+              title: "【雨備】海雲台 24 小時元祖老奶奶湯飯",
+              desc: "飯店入住後直接步行 2 分鐘吃熱騰騰的牛肉湯飯，避免雨天逛露天市場。",
+              tags: ["室內暖胃首選", "招牌：牛肉湯飯、水煮肉", "預算 ₩11,000", "免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Haeundae+Wonjo+Halmae+Gukbap"
+            }
+          ]
+        },
+        {
+          dayNum: 2,
+          dateLabel: "4/7 (三)",
+          title: "天空膠囊・冬柏賞櫻・新世界百貨",
+          weather: { icon: "☀️", temp: "11°C ~ 19°C", rain: "10%", outfit: "晴朗舒適，適合洋蔥式穿搭與好走的運動鞋。" },
+          hotelIndex: 0,
+          sunny: [
+            {
+              id: "d2-s1",
+              type: "sight",
+              time: "09:30",
+              title: "海雲台藍線公園・天空膠囊列車（尾浦→青沙浦）",
+              mustGo: true,
+              desc: "從海雲台海雲飯店公寓沿沙灘散步約 12 分鐘即可抵達尾浦起點站，搭乘彩色空中膠囊車廂欣賞絕美海岸線。",
+              tags: ["停留 1.5 小時", "務必提前線上預約"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Haeundae+Blueline+Park+Mipo+Station",
+              transitToNext: {
+                mode: "列車直達＋步行",
+                route: "膠囊列車抵達青沙浦站後步行前往紅白燈塔與咖啡街",
+                duration: "約 250 公尺（步行 4 分鐘）",
+                fare: "已含於膠囊列車票內"
+              }
+            },
+            {
+              id: "d2-s2",
+              type: "food",
+              time: "11:15",
+              title: "青沙浦海景咖啡廳 早午餐",
+              desc: "拍完青沙浦紅白雙燈塔與韓版灌籃高手平交道後，選一間面海咖啡廳（如 H.US Coffee 或 Cafe Rooftop）享受海景早午餐。",
+              tags: ["海景咖啡甜點", "招牌：鹽可頌、海鹽拿鐵", "預算 ₩15,000~20,000", "建議避開 13:00 尖峰"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Cheongsapo+Twin+Lighthouses",
+              transitToNext: {
+                mode: "海雲台區 2 號社區公車 ＋ 地鐵 2 號線",
+                route: "青沙浦搭 2 號公車 → 萇山站轉地鐵 2 號線 → 冬柏站 3 號出口",
+                duration: "公車 10 分 ＋ 地鐵 6 分（30 分鐘內免費轉乘）",
+                fare: "刷交通卡僅 ₩1,600"
+              }
+            },
+            {
+              id: "d2-s3",
+              type: "sight",
+              time: "13:30",
+              title: "冬柏站 3 號出口賞櫻步道",
+              mustGo: true,
+              desc: "4 月初正值釜山櫻花滿開期！沿著冬柏站 3 號出口旁的櫻花林道漫步拍照，享受粉白花海。",
+              tags: ["停留 1 小時", "4月限定花季"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Dongbaek+Station+Exit+3",
+              transitToNext: {
+                mode: "全程步行",
+                route: "步行前往冬柏站旁大型大創旗艦店",
+                duration: "約 200 公尺（步行 3 分鐘）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d2-s4",
+              type: "shop",
+              time: "14:45",
+              title: "海雲台大型大創旗艦店（Daiso）",
+              desc: "多層樓超好逛的旗艦店，文具貼紙、美妝海綿、韓國零食與旅行收納小物一應俱全。",
+              tags: ["推薦：Disney聯名、美妝工具", "單筆滿 ₩15,000 可退稅", "營業 10:00-22:00"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Daiso+Haeundae",
+              transitToNext: {
+                mode: "地鐵 2 號線",
+                route: "冬柏站 → Centum City 站（僅 2 站，地下連通道直達）",
+                duration: "車程 4 分鐘 ＋ 步行 3 分鐘",
+                fare: "刷卡 ₩1,600"
+              }
+            },
+            {
+              id: "d2-s5",
+              type: "shop",
+              time: "16:30",
+              title: "Centum City 新世界百貨",
+              desc: "金氏世界紀錄認證全球最大百貨！集合韓國人氣香氛、潮流服飾與地下美食街，晚上順道享用晚餐。",
+              tags: ["推薦：Tamburins、Gentle Monster", "百貨櫃台辦理退稅", "營業 10:30-20:30"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Shinsegae+Centum+City"
+            }
+          ],
+          rainy: [
+            {
+              id: "d2-r1",
+              type: "sight",
+              time: "10:30",
+              title: "【雨備】SEA LIFE 釜山水族館",
+              desc: "就在海雲台海雲飯店公寓對面沙灘旁！全室內海底隧道水族館，下樓走 2 分鐘即達。",
+              tags: ["停留 2 小時", "全室內景點"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=SEA+LIFE+Busan+Aquarium",
+              transitToNext: {
+                mode: "地鐵 2 號線",
+                route: "海雲台站 → Centum City 站（地下直通免淋雨）",
+                duration: "車程 7 分鐘",
+                fare: "刷卡 ₩1,600"
+              }
+            },
+            {
+              id: "d2-r2",
+              type: "sight",
+              time: "13:30",
+              title: "【雨備】新世界 Spa Land 豪華汗蒸幕",
+              mustGo: true,
+              desc: "體驗韓國頂級五星級汗蒸幕、天然溫泉池與必吃的甜米釀＋烤雞蛋。",
+              tags: ["停留 3.5 小時", "可使用 Busan Pass"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Spa+Land+Centum+City",
+              transitToNext: {
+                mode: "館內步行連通",
+                route: "直接步入新世界百貨逛街與享用晚餐",
+                duration: "步行 2 分鐘",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d2-r3",
+              type: "shop",
+              time: "17:30",
+              title: "Centum City 新世界百貨 購物＆晚餐",
+              desc: "在百貨內逛街採買並辦理退稅，晚餐直接於百貨美食街享用韓式料理。",
+              tags: ["室內逛街首選", "單筆滿 ₩15,000 可退稅", "營業至 20:30"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Shinsegae+Centum+City"
+            }
+          ]
+        },
+        {
+          dayNum: 3,
+          dateLabel: "4/8 (四)",
+          title: "東釜山海線滑車・機張螃蟹・入住安凡尼",
+          weather: { icon: "⛅", temp: "12°C ~ 18°C", rain: "20%", outfit: "玩斜坡滑車風較大，建議穿長褲與防風外套。" },
+          hotelIndex: 1,
+          sunny: [
+            {
+              id: "d3-s1",
+              type: "sight",
+              time: "09:00",
+              title: "退房寄放行李 → 海濱海岸列車（往松亭）",
+              mustGo: true,
+              desc: "退房後將行李寄放海雲台海雲飯店公寓櫃台，步行至尾浦站搭乘海濱海岸列車沿海岸線前往松亭站。",
+              tags: ["停留 45 分鐘", "可使用 Busan Pass"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Songjeong+Station+Blueline+Park",
+              transitToNext: {
+                mode: "計程車短程接駁（三人分攤最省時省力）",
+                route: "松亭站 → Skyline Luge 釜山場",
+                duration: "車程約 7 分鐘",
+                fare: "約 ₩5,500（三人分攤每人僅約 ₩1,850）"
+              }
+            },
+            {
+              id: "d3-s2",
+              type: "sight",
+              time: "10:15",
+              title: "Skyline Luge 釜山斜坡滑車",
+              mustGo: true,
+              desc: "搭乘空中吊椅上山，親自操控無動力滑車沿 4 條海景賽道俯衝而下，刺激又好拍！",
+              tags: ["停留 1.5 小時", "可使用 Busan Pass 換票"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Skyline+Luge+Busan",
+              transitToNext: {
+                mode: "東海線電鐵",
+                route: "奧西利亞站（步行 10 分）→ 機張站（1 號出口步行 5 分）",
+                duration: "電鐵 5 分鐘 ＋ 步行 15 分鐘",
+                fare: "刷卡 ₩1,600"
+              }
+            },
+            {
+              id: "d3-s3",
+              type: "food",
+              time: "12:30",
+              title: "機張市場・現蒸雪蟹／帝王蟹大餐",
+              mustGo: true,
+              desc: "釜山吃螃蟹性價比最高聖地！現場挑選新鮮雪蟹或帝王蟹，附贈蟹膏炒飯與滿桌小菜。",
+              tags: ["在地海鮮大餐", "招牌：清蒸雪蟹、蟹膏炒飯", "預算 ₩45,000~70,000/人", "建議詢價比價"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gijang+Market",
+              transitToNext: {
+                mode: "東海線電鐵",
+                route: "機張站 → 奧西利亞站（1 站即達）",
+                duration: "車程 5 分鐘 ＋ 步行 5 分鐘",
+                fare: "刷卡 ₩1,600"
+              }
+            },
+            {
+              id: "d3-s4",
+              type: "shop",
+              time: "14:45",
+              title: "樂天 Premium Outlet 東釜山店",
+              desc: "南歐聖托里尼建築風格的超大 Outlet，運動品牌、戶外機能服飾折扣力度極高。",
+              tags: ["推薦：Nike、New Balance、North Face", "滿 ₩15,000 現場/櫃台退稅", "營業 10:30-21:00"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Lotte+Premium+Outlets+Dongbusan",
+              transitToNext: {
+                mode: "東海線 ＋ 地鐵 2 號線（免轉車直達飯店站）",
+                route: "奧西利亞站 → BEXCO 站轉 2 號線 → 海雲台取行李 → 國際金融中心・釜山銀行站 3 號出口",
+                duration: "約 58 分鐘（出站步行 4 分鐘即達飯店）",
+                fare: "刷卡約 ₩1,800"
+              }
+            },
+            {
+              id: "d3-s5",
+              type: "food",
+              time: "18:30",
+              title: "釜山中央安凡尼飯店 Check-in ＋ 百年蔘雞湯／烤肉",
+              desc: "入住 Avani Deluxe Triple Room 後，搭 1 站地鐵（或散步 12 分鐘）至西面商圈享用百年蔘雞湯或厚切鹽烤肉（味贊王／伍班長）。",
+              tags: ["韓式補氣料理/烤肉", "招牌：紫蘇蔘雞湯、厚切五花肉", "預算 ₩18,000~28,000", "烤肉建議 18:30 前到"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Avani+Central+Busan"
+            }
+          ],
+          rainy: [
+            {
+              id: "d3-r1",
+              type: "shop",
+              time: "10:30",
+              title: "【雨備】樂天百貨 東釜山 Outlet（全室內迴廊逛街）",
+              desc: "雨天取消戶外滑車與海岸列車，直接搭東海線前往奧西利亞站逛 Outlet 與樂天 Mall 室內區。",
+              tags: ["室內購物", "單筆滿 ₩15,000 可退稅", "營業 10:30-21:00"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Lotte+Premium+Outlets+Dongbusan",
+              transitToNext: {
+                mode: "東海線電鐵",
+                route: "奧西利亞站 → 機張站（室內市場棚架區）",
+                duration: "車程 5 分鐘",
+                fare: "刷卡 ₩1,600"
+              }
+            },
+            {
+              id: "d3-r2",
+              type: "food",
+              time: "13:00",
+              title: "機張市場・現蒸雪蟹大餐",
+              desc: "機張市場全區設有遮雨棚，雨天也能舒適挑選螃蟹並進入室內包廂享用大餐。",
+              tags: ["海鮮料理", "招牌：清蒸雪蟹、蟹膏炒飯", "預算 ₩50,000/人"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gijang+Market",
+              transitToNext: {
+                mode: "東海線 ＋ 地鐵 2 號線",
+                route: "機張站 → BEXCO 站轉 2 號線 → 海雲台取行李 → 國際金融中心・釜山銀行站",
+                duration: "約 60 分鐘",
+                fare: "刷卡約 ₩1,800"
+              }
+            },
+            {
+              id: "d3-r3",
+              type: "food",
+              time: "18:30",
+              title: "安凡尼飯店入住 ＋ 百年蔘雞湯",
+              desc: "雨天微涼最適合來一鍋濃郁的韓國百年蔘雞湯暖身。",
+              tags: ["韓式養生湯品", "招牌：原味蔘雞湯、海鮮煎餅", "預算 ₩18,000"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Avani+Central+Busan"
+            }
+          ]
+        },
+        {
+          dayNum: 4,
+          dateLabel: "4/9 (五)",
+          title: "西面醫美變美・田浦咖啡街・樂天百貨",
+          weather: { icon: "☀️", temp: "13°C ~ 20°C", rain: "10%", outfit: "醫美術後建議戴帽子、口罩與防曬，穿著寬鬆舒適。" },
+          hotelIndex: 1,
+          sunny: [
+            {
+              id: "d4-s1",
+              type: "sight",
+              time: "10:00",
+              title: "西面醫美皮膚管理預約",
+              mustGo: true,
+              desc: "從安凡尼飯店搭地鐵 2 號線僅 1 站即達西面站！上午進行醫美保養療程，術後直接在市區輕鬆逛街不曝曬。",
+              tags: ["停留 2 小時", "範例預約：10:30", "務必攜帶護照"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Seomyeon+Medical+Street",
+              transitToNext: {
+                mode: "全程步行",
+                route: "步行前往西面豬肉湯飯一條街",
+                duration: "約 350 公尺（步行 5 分鐘）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d4-s2",
+              type: "food",
+              time: "12:30",
+              title: "松亭三代豬肉湯飯（西面本店）",
+              mustGo: true,
+              desc: "傳承三代的釜山靈魂美食！乳白色大骨湯頭搭配蝦醬、韭菜與細麵，清甜不膩口。",
+              tags: ["釜山代表美食", "招牌：豬肉湯飯、血腸湯飯", "預算 ₩10,000~12,000", "24小時營業免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Songjeong+3dae+Gukbap+Seomyeon",
+              transitToNext: {
+                mode: "全程步行",
+                route: "穿過西面商圈散步至田浦咖啡街",
+                duration: "約 550 公尺（步行 8 分鐘）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d4-s3",
+              type: "food",
+              time: "14:00",
+              title: "田浦咖啡街 文青下午茶巡禮",
+              desc: "田浦咖啡街正好位於西面與安凡尼飯店之間！推薦 Vintage 38 或 FM Coffee，品嚐手沖咖啡與手作甜點。",
+              tags: ["文青咖啡廳", "招牌：維也納咖啡、生乳捲", "預算 ₩10,000~15,000", "免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Jeonpo+Cafe+Street",
+              transitToNext: {
+                mode: "全程步行",
+                route: "沿西面地下街一路逛往西面樂天百貨",
+                duration: "約 600 公尺（步行 9 分鐘）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d4-s4",
+              type: "shop",
+              time: "16:30",
+              title: "西面樂天百貨釜山本店 ＆ 西面地下街",
+              desc: "逛樂天免稅店與韓國本土設計品牌（Mardi Mercredi、Marithe），順道逛平價好買的西面地下街，逛完搭 1 站地鐵回飯店。",
+              tags: ["推薦：韓國潮牌、免稅美妝", "單筆滿 ₩15,000 可退稅", "營業 10:30-20:30"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Lotte+Department+Store+Busan+Main"
+            }
+          ],
+          rainy: [
+            {
+              id: "d4-r1",
+              type: "sight",
+              time: "10:00",
+              title: "西面醫美皮膚管理預約",
+              desc: "全室內診所行程完全不受下雨影響。",
+              tags: ["停留 2 小時", "攜帶護照"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Seomyeon+Medical+Street",
+              transitToNext: {
+                mode: "西面地下街連通道步行",
+                route: "走地下商店街避雨前往豬肉湯飯街",
+                duration: "步行 6 分鐘",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d4-r2",
+              type: "food",
+              time: "12:30",
+              title: "松亭三代豬肉湯飯",
+              desc: "下雨天喝一碗熱呼呼的豬肉湯飯最幸福。",
+              tags: ["釜山代表美食", "招牌：豬肉湯飯", "預算 ₩10,000"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Songjeong+3dae+Gukbap+Seomyeon",
+              transitToNext: {
+                mode: "西面地下街連通直達",
+                route: "地下街直接連通西面樂天百貨 B1",
+                duration: "步行 5 分鐘（全程室內）",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d4-r3",
+              type: "shop",
+              time: "14:30",
+              title: "【雨備】西面樂天百貨 ＆ 地下街全天血拚",
+              desc: "將田浦咖啡街改為樂天百貨內景觀咖啡廳下午茶，接著一路逛免稅店與超長地下商店街。",
+              tags: ["全室內免淋雨", "單筆滿 ₩15,000 可退稅", "營業至 20:30"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Lotte+Department+Store+Busan+Main"
+            }
+          ]
+        },
+        {
+          dayNum: 5,
+          dateLabel: "4/10 (六)",
+          title: "松島纜車・Arte Museum・南浦洞・廣安里無人機",
+          weather: { icon: "☀️", temp: "12°C ~ 19°C", rain: "10%", outfit: "晚上在廣安里沙灘看無人機秀海風較冷，務必帶保暖外套。" },
+          hotelIndex: 1,
+          sunny: [
+            {
+              id: "d5-s1",
+              type: "sight",
+              time: "09:30",
+              title: "松島海上纜車 ＆ 松島龍宮雲橋",
+              mustGo: true,
+              desc: "搭乘水晶車廂橫越海面，腳下即是蔚藍大海，抵達岩南公園後走上懸空在海面上的龍宮雲橋。",
+              tags: ["停留 2 小時", "可使用 Busan Pass 換票"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Songdo+Marine+Cable+Car",
+              transitToNext: {
+                mode: "計程車短程跨海大橋（三人分攤最省時動線）",
+                route: "松島纜車站 → 影島 ARTE MUSEUM BUSAN",
+                duration: "車程約 12 分鐘",
+                fare: "約 ₩8,000（三人分攤每人僅約 ₩2,700，省下公車轉乘時間）"
+              }
+            },
+            {
+              id: "d5-s2",
+              type: "sight",
+              time: "12:00",
+              title: "影島 ARTE MUSEUM BUSAN 沉浸式光影展",
+              mustGo: true,
+              desc: "韓國最大規模沉浸式數位藝術美術館，巨型海浪、極光與花卉光影超級震撼。",
+              tags: ["停留 1.5 小時", "可使用 Busan Pass"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=ARTE+MUSEUM+BUSAN",
+              transitToNext: {
+                mode: "市區公車（17 / 30 / 88 號）",
+                route: "影島東三洞 → 跨影島大橋直達札嘎其市場站",
+                duration: "車程約 15 分鐘",
+                fare: "刷卡 ₩1,550"
+              }
+            },
+            {
+              id: "d5-s3",
+              type: "food",
+              time: "14:00",
+              title: "札嘎其海鮮市場 ＆ BIFF 廣場黑糖餅",
+              desc: "先在札嘎其市場品嚐現切生魚片或海鮮煎餅，接著散步到 BIFF 廣場吃現煎堅果黑糖餅。",
+              tags: ["海港生猛海鮮", "招牌：生魚片拼盤、元祖黑糖餅", "預算 ₩15,000~25,000", "免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Jagalchi+Market",
+              transitToNext: {
+                mode: "全程步行",
+                route: "由 BIFF 廣場直接步入國際市場與光復路商圈",
+                duration: "步行 2 分鐘",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d5-s4",
+              type: "shop",
+              time: "15:30",
+              title: "國際市場 ＆ 南浦洞光復路商圈",
+              desc: "購買釜山魚板真空包、傳統小物、球鞋與韓系服飾，一路逛到南浦地鐵站。",
+              tags: ["推薦：古來思魚板、運動鞋街", "部分店家滿 ₩15,000 可退稅", "營業 10:30-21:00"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Nampo-dong+Shopping+Street",
+              transitToNext: {
+                mode: "地鐵 1 號線 ＋ 2 號線",
+                route: "南浦站 → 西面站轉 2 號線 → 廣安站 3 號出口（步行 10 分到海邊）",
+                duration: "車程 32 分鐘 ＋ 步行 10 分鐘",
+                fare: "刷卡 ₩1,800"
+              }
+            },
+            {
+              id: "d5-s5",
+              type: "sight",
+              time: "19:30",
+              title: "廣安里海水浴場・週六限定 M 無人機燈光秀",
+              mustGo: true,
+              desc: "每週六晚間 20:00 登場！數百台無人機在廣安大橋夜空變換主題圖案，看完在海景餐廳吃晚餐後搭 2 號線直回「國際金融中心・釜山銀行站」（僅 6 站約 11 分鐘）。",
+              tags: ["週六 20:00 準時開演", "免費觀賞"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gwangalli+Beach"
+            }
+          ],
+          rainy: [
+            {
+              id: "d5-r1",
+              type: "sight",
+              time: "10:30",
+              title: "【雨備】影島 ARTE MUSEUM BUSAN（全室內展館）",
+              mustGo: true,
+              desc: "雨天改以全室內光影美術館開場，不受海風與雨勢影響。",
+              tags: ["停留 2 小時", "可使用 Busan Pass"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=ARTE+MUSEUM+BUSAN",
+              transitToNext: {
+                mode: "市區公車",
+                route: "影島 → 南浦洞樂天百貨光復店",
+                duration: "車程約 15 分鐘",
+                fare: "刷卡 ₩1,550"
+              }
+            },
+            {
+              id: "d5-r2",
+              type: "shop",
+              time: "13:00",
+              title: "【雨備】樂天百貨光復店（室內音樂噴泉＋購物＋午餐）",
+              desc: "觀賞世界最大室內音樂水舞噴泉，並在百貨內享用南浦洞特色冷豬腳或韓式定食。",
+              tags: ["全室內景點", "單筆滿 ₩15,000 可退稅", "營業 10:30-20:30"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Lotte+Department+Store+Gwangbok",
+              transitToNext: {
+                mode: "地鐵 1 號線 ＋ 2 號線",
+                route: "南浦站 → 西面站轉 2 號線 → 廣安站",
+                duration: "約 35 分鐘",
+                fare: "刷卡 ₩1,800"
+              }
+            },
+            {
+              id: "d5-r3",
+              type: "food",
+              time: "18:30",
+              title: "廣安里海景咖啡／餐廳看大橋夜景（視雨勢確認無人機）",
+              desc: "若雨勢較大無人機停飛，可直接在廣安里正面對廣安大橋的室內海景餐廳享用烤蛤蜊或韓牛晚餐。",
+              tags: ["海景第一排", "招牌：海景烤蛤蜊、Pasta", "預算 ₩25,000~35,000"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gwangalli+Beach"
+            }
+          ]
+        },
+        {
+          dayNum: 6,
+          dateLabel: "4/11 (日)",
+          title: "市區最後補貨・傍晚前往機場返台",
+          weather: { icon: "🌤️", temp: "12°C ~ 19°C", rain: "10%", outfit: "搭機舒適穿搭，預留外套放隨身背包防機上冷氣。" },
+          hotelIndex: 1,
+          sunny: [
+            {
+              id: "d6-s1",
+              type: "shop",
+              time: "10:30",
+              title: "退房寄放行李 → 西面商圈／Olive Young 旗艦店最後補貨",
+              desc: "安凡尼飯店 12:00 前退房並將行李寄放櫃台，搭 1 站地鐵至西面站採買美妝、伴手禮與韓國零食，買完回飯店大廳裝箱整理。（註：2027/4/11 為 4 月第 2 個週日，韓國大型連鎖超市如 E-Mart / 樂天超市依規定公休，建議改逛無公休的西面 Olive Young 旗艦店、大創與商圈伴手禮專賣店）。",
+              tags: ["推薦：Olive Young、HBAF杏仁、海苔酥", "結帳出示護照即時退稅", "週日照常營業"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Olive+Young+Seomyeon+Town",
+              transitToNext: {
+                mode: "全程步行",
+                route: "在西面美食街享用最後一餐道地韓食",
+                duration: "步行 3 分鐘",
+                fare: "₩0"
+              }
+            },
+            {
+              id: "d6-s2",
+              type: "food",
+              time: "13:30",
+              title: "西面商圈 韓式嫩豆腐鍋／石鍋拌飯",
+              desc: "在西面悠閒享用午餐，飯後可安排 60 分鐘韓式足體按摩，舒緩連日步行的雙腿，隨後回飯店取行李。",
+              tags: ["韓式家常料理", "招牌：海鮮嫩豆腐鍋、烤牛肉拌飯", "預算 ₩10,000~14,000", "免訂位"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Seomyeon+Food+Alley",
+              transitToNext: {
+                mode: "地鐵 2 號線 ＋ 金海輕軌（最準時不塞車）",
+                route: "國際金融中心・釜山銀行站 → 沙上站轉金海輕軌 → 機場站（建議 17:30 出發）",
+                duration: "車程約 33 分鐘（三人若搭計程車約 25 分鐘、車資約 ₩16,000）",
+                fare: "地鐵＋輕軌刷卡僅 ₩1,800/人"
+              }
+            },
+            {
+              id: "d6-s3",
+              type: "transit",
+              time: "18:15",
+              title: "抵達釜山金海機場・辦理退稅與 IT 607 登機",
+              desc: "先至國際線退稅機台（KIOSK）掃描護照與退稅單，再至台灣虎航櫃台託運行李，20:45 準時起飛返台！",
+              tags: ["預留 2.5 小時報到", "22:10 抵達桃園機場"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport"
+            }
+          ],
+          rainy: [
+            {
+              id: "d6-r1",
+              type: "shop",
+              time: "11:00",
+              title: "【雨備】西面地下街 ＆ Olive Young 旗艦店補貨",
+              desc: "走西面地下道避雨採買最後伴手禮與面膜保養品，回飯店整理行李。",
+              tags: ["全程室內通道", "滿 ₩15,000 現場即時退稅"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Seomyeon+Underground+Shopping+Center",
+              transitToNext: {
+                mode: "地鐵 2 號線 ＋ 金海輕軌",
+                route: "國際金融中心・釜山銀行站 → 沙上站轉輕軌 → 機場站（17:30 出發）",
+                duration: "約 33 分鐘",
+                fare: "刷卡約 ₩1,800"
+              }
+            },
+            {
+              id: "d6-r2",
+              type: "transit",
+              time: "18:15",
+              title: "抵達釜山金海機場・退稅與 IT 607 報到",
+              desc: "完成退稅機台確認與行李託運，搭乘 20:45 班機平安返家。",
+              tags: ["20:45 起飛 → 22:10 抵台"],
+              mapUrl: "https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport"
+            }
+          ]
+        }
+      ],
+      defaultChecklist: [
+        { id: "c1", cat: "todo", text: "預約海雲台天空膠囊列車（尾浦→青沙浦 10:00 場次）", done: false },
+        { id: "c2", cat: "todo", text: "購買 Visit Busan Pass 釜山通行證（BIG3 或 24H 方案）", done: false },
+        { id: "c3", cat: "todo", text: "確認西面醫美診所預約時間與中文諮詢", done: false },
+        { id: "c4", cat: "todo", text: "購買韓國 6 日 eSIM / 實體網卡", done: false },
+        { id: "c5", cat: "todo", text: "投保海外旅遊平安險＋不便險", done: false },
+        { id: "c6", cat: "todo", text: "台灣銀行兌換韓元現鈔（建議先換約 ₩200,000 備用）", done: false },
+        { id: "c7", cat: "packing", text: "護照正本（確認效期滿 6 個月以上）", done: false },
+        { id: "c8", cat: "packing", text: "T-money / WOWPASS 交通卡", done: false },
+        { id: "c9", cat: "packing", text: "韓國雙圓孔轉接頭（220V）＋行動電源", done: false },
+        { id: "c10", cat: "packing", text: "4月春裝：薄長袖、防風外套（廣安里海邊晚上會冷）", done: false },
+        { id: "c11", cat: "packing", text: "醫美術後用品：防曬乳、帽子、口罩、保濕面膜", done: false },
+        { id: "c12", cat: "packing", text: "摺疊購物袋＋行李秤（戰利品裝箱必備）", done: false }
+      ]
+    };
+
+    /* =====================================================================
+       應用程式狀態與本地儲存 (localStorage)
+       ===================================================================== */
+    const STORAGE_KEY = "busan_2027_trip_state_v2";
+    let state = {
+      activeTab: "overview",
+      activeDay: 1,
+      weatherMode: "sunny",
+      completedSpots: {},
+      exchangeRate: 0.0235,
+      expenses: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] },
+      checklist: JSON.parse(JSON.stringify(TRIP_DATA.defaultChecklist))
+    };
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          state = { ...state, ...parsed };
+        }
+      } catch (e) {
+        console.warn("無法讀取本地紀錄", e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn("無法儲存本地紀錄", e);
+      }
+    }
+
+    /* =====================================================================
+       導覽切換與滾動
+       ===================================================================== */
+    function switchTab(tabName) {
+      state.activeTab = tabName;
+      document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.tab === tabName);
+      });
+      document.querySelectorAll(".tab-section").forEach(sec => {
+        sec.classList.toggle("active", sec.id === `tab-${tabName}`);
+      });
+      if (tabName === "hotels") {
+        renderAllDaysExpenseSummary();
+      }
+      saveState();
+    }
+
+    function scrollToMenu() {
+      document.getElementById("topMenu").scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    /* =====================================================================
+       智慧出發倒數與旅程中自動切換提醒
+       ===================================================================== */
+    function updateCountdown() {
+      const now = new Date();
+      const start = new Date(TRIP_DATA.startDateISO);
+      const end = new Date(TRIP_DATA.endDateISO);
+
+      const labelEl = document.getElementById("cdLabel");
+      const gridEl = document.getElementById("cdGrid");
+      const subEl = document.getElementById("cdSub");
+
+      if (now < start) {
+        const diff = start - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+
+        labelEl.textContent = "距離釜山出發還有";
+        gridEl.style.display = "flex";
+        document.getElementById("cdDays").textContent = days;
+        document.getElementById("cdHours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("cdMins").textContent = String(mins).padStart(2, "0");
+        subEl.textContent = "2027/04/06（二）16:40 台灣虎航 IT 606 起飛";
+      } else if (now >= start && now <= end) {
+        const dayIndex = Math.min(6, Math.max(1, Math.floor((now - new Date("2027-04-06T00:00:00+09:00")) / (1000 * 60 * 60 * 24)) + 1));
+        const todayData = TRIP_DATA.days[dayIndex - 1];
+        const firstSpot = todayData ? todayData.sunny[0].title : "享受釜山自由行";
+
+        labelEl.textContent = `🎉 釜山旅程進行中・目前為 Day ${dayIndex}（${todayData.dateLabel}）`;
+        gridEl.style.display = "none";
+        subEl.innerHTML = `<strong>今日焦點：</strong>${todayData.title}<br/><strong>重點行程提醒：</strong>${firstSpot}`;
+      } else {
+        labelEl.textContent = "✨ 2027 釜山六天五夜回憶圓滿完成";
+        gridEl.style.display = "none";
+        subEl.textContent = "歡迎隨時修改上方日期，規劃下一趟韓國之旅！";
+      }
+    }
+
+    /* =====================================================================
+       每日行程渲染（日期按鈕、Sticky摘要、晴雨天、時間軸與交通）
+       ===================================================================== */
+    function renderDaySelector() {
+      const container = document.getElementById("daySelector");
+      container.innerHTML = TRIP_DATA.days.map(d => `
+        <button type="button" class="day-btn ${state.activeDay === d.dayNum ? "active" : ""}" onclick="selectDay(${d.dayNum})">
+          <span class="day-btn-num">DAY ${d.dayNum}</span>
+          <span class="day-btn-date">${d.dateLabel}</span>
+        </button>
+      `).join("");
+    }
+
+    function selectDay(dayNum) {
+      state.activeDay = dayNum;
+      saveState();
+      renderDaySelector();
+      renderItineraryContent();
+      renderDayExpenses();
+    }
+
+    function setWeatherMode(mode) {
+      state.weatherMode = mode;
+      document.getElementById("btnSunny").classList.toggle("active", mode === "sunny");
+      document.getElementById("btnRainy").classList.toggle("active", mode === "rainy");
+      saveState();
+      renderItineraryContent();
+    }
+
+    function toggleSpotDone(spotId) {
+      state.completedSpots[spotId] = !state.completedSpots[spotId];
+      saveState();
+      renderItineraryContent();
+    }
+
+    function renderItineraryContent() {
+      const dayObj = TRIP_DATA.days.find(d => d.dayNum === state.activeDay);
+      const hotel = TRIP_DATA.hotels[dayObj.hotelIndex];
+
+      // 1. 隨捲動保持可見的資訊摘要 (Sticky Summary)
+      document.getElementById("stickySummary").innerHTML = `
+        <div class="sticky-row-top">
+          <div class="weather-pill">
+            <span>${dayObj.weather.icon}</span>
+            <span>${dayObj.dateLabel}・${dayObj.weather.temp}</span>
+          </div>
+          <span class="rain-prob">降雨機率 ${dayObj.weather.rain}</span>
+        </div>
+        <div class="outfit-tip">👕 <strong>穿搭建議：</strong>${dayObj.weather.outfit}</div>
+        <div class="hotel-mini">
+          <div class="hotel-mini-info">
+            <strong>🏨 ${hotel.name}</strong>
+            <span>${hotel.station}（${hotel.walkTime}）</span>
+          </div>
+          <a href="${hotel.googleMapUrl}" target="_blank" rel="noopener" class="btn-mini-map">📍 Google地圖</a>
+        </div>
+      `;
+
+      // 2. 時間軸行程卡片與景點間交通連接
+      const list = state.weatherMode === "sunny" ? dayObj.sunny : dayObj.rainy;
+      const timelineEl = document.getElementById("timelineContainer");
+
+      timelineEl.innerHTML = list.map((item, idx) => {
+        const isDone = !!state.completedSpots[item.id];
+        const delay = (idx * 0.06).toFixed(2);
+        const typeClass = `type-${item.type}`;
+        const mustBadge = item.mustGo ? `<span class="badge-must">★ 必去</span>` : "";
+
+        const tagsHtml = (item.tags || []).map(t => `<span class="meta-tag">${t}</span>`).join("");
+
+        const transitHtml = item.transitToNext ? `
+          <div class="transit-connector">
+            <div class="transit-head">
+              <span>👣 下一站交通：${item.transitToNext.mode}</span>
+              <span class="transit-fare">${item.transitToNext.fare}</span>
+            </div>
+            <div class="transit-sub">
+              <div><strong>路線：</strong>${item.transitToNext.route}</div>
+              <div><strong>時間：</strong>${item.transitToNext.duration}</div>
+            </div>
+          </div>
+        ` : "";
+
+        return `
+          <div class="timeline-item-wrap" style="animation-delay: ${delay}s;">
+            <article class="spot-card ${typeClass} ${isDone ? "completed" : ""}">
+              <div class="spot-top">
+                <div>
+                  <span class="spot-time-badge">${item.time}</span>
+                  <h3 class="spot-title">${item.title}${mustBadge}</h3>
+                </div>
+                <button type="button" class="check-toggle ${isDone ? "checked" : ""}"
+                        onclick="toggleSpotDone('${item.id}')"
+                        aria-label="標記完成狀態">
+                  ${isDone ? "✓" : ""}
+                </button>
+              </div>
+              <p class="spot-details">${item.desc}</p>
+              <div class="spot-meta-tags">${tagsHtml}</div>
+              <div class="spot-actions">
+                <a href="${item.mapUrl}" target="_blank" rel="noopener" class="btn-map">🗺️ 查看景點地圖</a>
+              </div>
+            </article>
+            ${transitHtml}
+          </div>
+        `;
+      }).join("");
+    }
+
+    /* =====================================================================
+       每日花費記帳（韓元 KRW -> 新台幣 TWD）
+       ===================================================================== */
+    const rateInput = document.getElementById("exchangeRateInput");
+    rateInput.value = state.exchangeRate;
+    rateInput.addEventListener("change", () => {
+      const val = parseFloat(rateInput.value);
+      if (val > 0) {
+        state.exchangeRate = val;
+        saveState();
+        renderDayExpenses();
+        renderAllDaysExpenseSummary();
+      }
+    });
+
+    function addExpense(e) {
+      e.preventDefault();
+      const titleInput = document.getElementById("expTitle");
+      const krwInput = document.getElementById("expKrw");
+      const title = titleInput.value.trim();
+      const krw = parseInt(krwInput.value, 10);
+      if (!title || isNaN(krw) || krw <= 0) return;
+
+      if (!state.expenses[state.activeDay]) state.expenses[state.activeDay] = [];
+      state.expenses[state.activeDay].push({ id: Date.now(), title, krw });
+
+      titleInput.value = "";
+      krwInput.value = "";
+      saveState();
+      renderDayExpenses();
+    }
+
+    function removeExpense(id) {
+      state.expenses[state.activeDay] = (state.expenses[state.activeDay] || []).filter(item => item.id !== id);
+      saveState();
+      renderDayExpenses();
+    }
+
+    function renderDayExpenses() {
+      document.getElementById("expDayLabel").textContent = `Day ${state.activeDay}`;
+      const list = state.expenses[state.activeDay] || [];
+      const ul = document.getElementById("expenseList");
+
+      if (list.length === 0) {
+        ul.innerHTML = `<li style="color:var(--text-muted);font-size:0.9rem;padding:6px 0;">尚未新增花費，可隨時輸入韓元自動換算台幣。</li>`;
+      } else {
+        ul.innerHTML = list.map(item => {
+          const twd = Math.round(item.krw * state.exchangeRate);
+          return `
+            <li class="expense-item">
+              <span>${item.title}</span>
+              <div>
+                <strong>₩${item.krw.toLocaleString()}</strong>
+                <span style="color:var(--text-muted);font-size:0.85rem;">(NT$${twd.toLocaleString()})</span>
+                <button type="button" class="btn-del" onclick="removeExpense(${item.id})">刪除</button>
+              </div>
+            </li>
+          `;
+        }).join("");
+      }
+
+      const totalKrw = list.reduce((sum, item) => sum + item.krw, 0);
+      const totalTwd = Math.round(totalKrw * state.exchangeRate);
+      document.getElementById("dayExpenseTotal").textContent = `₩${totalKrw.toLocaleString()}（約 NT$${totalTwd.toLocaleString()}）`;
+    }
+
+    function renderAllDaysExpenseSummary() {
+      const container = document.getElementById("allDaysExpenseSummary");
+      let grandKrw = 0;
+
+      const rowsHtml = TRIP_DATA.days.map(d => {
+        const list = state.expenses[d.dayNum] || [];
+        const dayKrw = list.reduce((s, i) => s + i.krw, 0);
+        grandKrw += dayKrw;
+        const dayTwd = Math.round(dayKrw * state.exchangeRate);
+        return `
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #CBD8D6;font-size:0.94rem;">
+            <span><strong>Day ${d.dayNum}</strong>（${d.dateLabel}）</span>
+            <span>₩${dayKrw.toLocaleString()}（約 NT$${dayTwd.toLocaleString()}）</span>
+          </div>
+        `;
+      }).join("");
+
+      const grandTwd = Math.round(grandKrw * state.exchangeRate);
+      container.innerHTML = `
+        ${rowsHtml}
+        <div class="expense-total-bar" style="margin-top:12px;">
+          <span>六天總支出累計</span>
+          <span>₩${grandKrw.toLocaleString()}（約 NT$${grandTwd.toLocaleString()}）</span>
+        </div>
+      `;
+    }
+
+    /* =====================================================================
+       行前準備清單（勾選、新增、刪除、進度計算）
+       ===================================================================== */
+    function renderChecklist() {
+      const todoUl = document.getElementById("todoListUl");
+      const packUl = document.getElementById("packingListUl");
+
+      const todos = state.checklist.filter(i => i.cat === "todo");
+      const packs = state.checklist.filter(i => i.cat === "packing");
+
+      const makeLi = item => `
+        <li class="checklist-li">
+          <label class="check-label ${item.done ? "done" : ""}">
+            <input type="checkbox" ${item.done ? "checked" : ""} onchange="toggleCheckItem('${item.id}')" />
+            <span>${item.text}</span>
+          </label>
+          <button type="button" class="btn-del" onclick="deleteCheckItem('${item.id}')">移除</button>
+        </li>
+      `;
+
+      todoUl.innerHTML = todos.map(makeLi).join("");
+      packUl.innerHTML = packs.map(makeLi).join("");
+
+      const total = state.checklist.length;
+      const doneCount = state.checklist.filter(i => i.done).length;
+      const pct = total === 0 ? 0 : Math.round((doneCount / total) * 100);
+
+      document.getElementById("checkCountBadge").textContent = `${doneCount} / ${total} 完成`;
+      document.getElementById("checkPercentText").textContent = `${pct}%`;
+      document.getElementById("checkProgressFill").style.width = `${pct}%`;
+    }
+
+    function toggleCheckItem(id) {
+      const target = state.checklist.find(i => i.id === id);
+      if (target) target.done = !target.done;
+      saveState();
+      renderChecklist();
+    }
+
+    function deleteCheckItem(id) {
+      state.checklist = state.checklist.filter(i => i.id !== id);
+      saveState();
+      renderChecklist();
+    }
+
+    function addChecklistItem(e) {
+      e.preventDefault();
+      const cat = document.getElementById("newCheckCat").value;
+      const input = document.getElementById("newCheckText");
+      const text = input.value.trim();
+      if (!text) return;
+
+      state.checklist.push({
+        id: "custom-" + Date.now(),
+        cat,
+        text,
+        done: false
+      });
+      input.value = "";
+      saveState();
+      renderChecklist();
+    }
+
+    /* =====================================================================
+       住宿資訊列表渲染（含 NAVER Map 與 Google Maps 按鈕）
+       ===================================================================== */
+    function renderHotels() {
+      const container = document.getElementById("hotelListContainer");
+      container.innerHTML = TRIP_DATA.hotels.map(h => `
+        <div class="hotel-card-detail">
+          <span class="hotel-nights-tag">${h.nightsLabel}</span>
+          <h3 style="font-size:1.1rem;color:var(--navy);margin-bottom:2px;">${h.name}</h3>
+          <p style="font-size:0.88rem;color:var(--pine);font-weight:700;margin-bottom:4px;">房型：${h.roomType}</p>
+          <p style="font-size:0.9rem;color:var(--text-muted);">${h.address}</p>
+          <div class="hotel-grid-info">
+            <div><strong>最近車站：</strong><br/>${h.station}（${h.walkTime}）</div>
+            <div><strong>訂房編號：</strong><br/>${h.bookingRef}</div>
+            <div><strong>入住時間：</strong>${h.checkIn}</div>
+            <div><strong>退房時間：</strong>${h.checkOut}</div>
+          </div>
+          <div class="hotel-btn-row">
+            <a href="${h.naverMapUrl}" target="_blank" rel="noopener" class="btn-naver">
+              🧭 NAVER Map
+            </a>
+            <a href="${h.googleMapUrl}" target="_blank" rel="noopener" class="btn-gmap-full">
+              📍 Google 地圖
+            </a>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    /* =====================================================================
+       初始化頁面
+       ===================================================================== */
+    loadState();
+    switchTab(state.activeTab);
+    updateCountdown();
+    setInterval(updateCountdown, 30000);
+    renderDaySelector();
+    setWeatherMode(state.weatherMode);
+    renderDayExpenses();
+    renderChecklist();
+    renderHotels();
+    renderAllDaysExpenseSummary();
+  </script>
+</body>
+</html>
